@@ -22,5 +22,10 @@ The main aim of this to have a basic structure, which can be easily adjusted to 
 - IMPORTANT: In `makefile`, when using `\` to split code into multiple lines, no space should follow `\`. Otherwise Gnu make aborts with error 193. 
 - Many possible improvements remain. Comments and contributions are welcome!
 
-See if this works
-blabla
+
+## Research questions
+1. Do negative Tweets influence the price of an Airbnb listing in different cities?
+
+2. Is the rental rate of Airbnb listings higher in smaller or bigger cities?
+
+3. Which city characteristics influence the price of an Airbnb listing?
