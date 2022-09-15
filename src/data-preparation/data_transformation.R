@@ -1,12 +1,19 @@
 ### DATA TRANSFORMATION ###
 ## DOWNLOAD DATA ##
 
-listings_amsterdam 
+# Creating the data folder
+dir.create('../../data')
 
-urls = c('http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-09-07/visualisations/listings.csv', 'http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-09-07/visualisations/reviews.csv')
+# creating a list with the download link and filenames of the raw data 
+files = list(c(url='http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-09-07/data/listings.csv.gz',
+               fn='listings-amsterdam.csv.gz'),
+             c(url='http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-09-07/data/reviews.csv.gz',
+               fn='reviews-amsterdam.csv.gz'))
 
-for (url in urls) {
-    filename = paste(gsub('[^a-zA-Z]', '', url), '.csv') 
-    filename = gsub('httpdatainsideairbnbcom', '', filename) 
-    download.file(url, destfile = filename) 
+# looping over the list to download and save the file in the data folder
+for (item in files) {
+    
+    download.file(item['url'], paste0('../../data/', item['fn']))
 }
+
+list_ams <- read.csv(gzfile('../../data/listings-amsterdam.csv.gz')) 
