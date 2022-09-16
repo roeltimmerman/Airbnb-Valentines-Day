@@ -1,11 +1,13 @@
-# Example of reproducible research workflow 
+# Research question
 
-This is a basic example repository using Gnu make for a reproducible research workflow, as described in detail here: [tilburgsciencehub.com](http://tilburgsciencehub.com/). 
+# Motivation
+Valentine's day is celebrated yearly on 14 February. It is a day when people show their love for each other by giving presents, eating out or going on trips. As more people go on trips, the demand of Airbnb's will increase. As the demand increases, hosts can charger higher prices for their accomodations. Besides that, as mostly couples will go on a trip, more accommodations for 2 people a likely to be booked. 
 
-The main aim of this to have a basic structure, which can be easily adjusted to use in an actual project.  In this example project, the following is done: 
-1. Download and prepare data
-2. Run some analysis
-3. Present results in a final pdf generated using LaTeX
+Based on the aformentioned introduction, the following research question has been proposed:
+'What is the influence of Valentine's day on the price and accomodation type of rented Airbnb's?'
+
+The data ...
+
 
 ## Dependencies
 - R 
