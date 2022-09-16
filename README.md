@@ -1,6 +1,4 @@
-# Research question
-
-# Motivation
+# Introduction
 Valentine's day is celebrated yearly on 14 February. It is a day when people show their love for each other by giving presents, eating out or going on trips. As more people go on trips, the demand of Airbnb's will increase. As the demand increases, hosts can charger higher prices for their accomodations. Besides that, as mostly couples will go on a trip, more accommodations for 2 people a likely to be booked. 
 
 Based on the aformentioned introduction, the following research question has been proposed:
