@@ -9,7 +9,7 @@ Valentine's day is celebrated yearly on 14 February. It is a day when romance ta
 Based on the aformentioned, the following research question was proposed:
 'How does Valentine's Day affect the price and accommodation type of Airbnb listings?'
 
-Furthermore, we distinguish between 1) different cities in Europe, as not every country celebrates Valentine's Day to the same extent and/or not every city is equally popular, or 2) between different neighbourhoods of one city, as the location of the Airbnb listing may matter. In addition, we look at whether it matters whether Valentine's Day falls on a weekend or not. For example, if Valentine's Day falls on a Monday, people may be less inclined to book an overnight stay than if it falls on a Friday. It is then possible that guests might postpone their overnight stays until the weekend. As a result, we will look at data from different years. The time period used is ...
+Furthermore, we distinguish between different cities in Europe, as not every country celebrates Valentine's Day to the same extent and/or not every city is equally popular. In addition, we look at whether it matters whether Valentine's Day falls on a weekend or not. For example, if Valentine's Day falls on a Monday, people may be less inclined to book an overnight stay than if it falls on a Friday. It is then possible that guests might postpone their overnight stays until the weekend. As a result, we will look at data from different years. The time period used is ...
 
 ## Data
 The data used in this research project was obtained from [Inside Airbnb](http://insideairbnb.com/).
