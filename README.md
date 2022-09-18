@@ -25,6 +25,4 @@ DV: price and accomodation type/characteristics
 
 IV: Valentine's Day
 
-Mediator: city?
-
-Moderator: day of Valentine's Day?
+Moderator: city?
