@@ -9,31 +9,22 @@ Valentine's day is celebrated yearly on 14 February. It is a day when romance ta
 Based on the aformentioned, the following research question was proposed:
 'How does Valentine's Day affect the price and accommodation type of Airbnb listings?'
 
-Furthermore, we distinguish between different cities in Europe, as not every country celebrates Valentine's Day to the same extent and/or not every city is equally popular. In addition, we look at whether it matters whether Valentine's Day falls on a weekend or not. For example, if Valentine's Day falls on a Monday, people may be less inclined to book an overnight stay than if it falls on a Friday. It is then possible that guests might postpone their overnight stays until the weekend. As a result, we will look at data from different years. The time period used is ...
+Furthermore, we distinguish between different cities in Europe, as not every country celebrates Valentine's Day to the same extent and/or not every city is equally popular. In addition, we look at whether it matters whether Valentine's Day falls on a weekend or not. For example, if Valentine's Day falls on a Monday, people may be less inclined to book an overnight stay than if it falls on a Friday. It is then possible that guests might postpone their overnight stays until the weekend. As a result, we will look at data from different years.
 
 ## Data
-The data used in this research project was obtained from [Inside Airbnb](http://insideairbnb.com/).
+The data used in this research project was obtained from [Inside Airbnb](http://insideairbnb.com/). The period of the data used is ...
 
+## Method and results
+**Method**
 
-## Dependencies
-- R 
-- R packages: `install.packages("stargazer")`
-- [Gnu Make](https://tilburgsciencehub.com/get/make) 
-- [TeX distribution](https://tilburgsciencehub.com/get/latex/?utm_campaign=referral-short)
-- For the `makefile` to work, R, Gnu make and the TeX distribution (specifically `pdflatex`) need to be made available in the system path 
-- Detailed installation instructions can be found here: [tilburgsciencehub.com](http://tilburgsciencehub.com/)
+Analysis:
 
+Variables:
 
-## Notes
-- `make clean` removes all unncessary temporary files. 
-- Tested under Linux Mint (should work in any linux distro, as well as on Windows and Mac) 
-- IMPORTANT: In `makefile`, when using `\` to split code into multiple lines, no space should follow `\`. Otherwise Gnu make aborts with error 193. 
-- Many possible improvements remain. Comments and contributions are welcome!
+DV: price and accomodation type/characteristics
 
+IV: Valentine's Day
 
-## Research questions
-1. Do negative Tweets influence the price of an Airbnb listing in different cities?
+Mediator: city?
 
-2. Is the rental rate of Airbnb listings higher in smaller or bigger cities?
-
-3. Which city characteristics influence the price of an Airbnb listing?
+Moderator: day of Valentine's Day?
