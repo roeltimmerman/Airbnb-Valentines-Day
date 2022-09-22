@@ -1,6 +1,5 @@
 ## DATA TRANSFORMATION ##
 # DOWNLOAD PACKAGES #
-
 install.packages('tidyverse')
 install.packages('dplyr')
 install.packages('ggplot2')
@@ -17,6 +16,9 @@ library('stringr')
 # FILTER VARIABLES NEEDED #
 list_ams_filtered <- c('id', 'host_id', 'neighborhood_overview', 'host_since', 'hosts_location', 'host_neighbourhood', 'neighbourhood_cleansed', 'room_type', 'minimum_nights', 'price')
 data_frame_ams <- list_ams[,which(colnames(list_ams)%in%list_ams_filtered)]
+
+reviews_ams_filterd <-c('date', 'reviewer_id', 'reviewer_name', 'comments')
+data_frame_ams_review <- reviews_ams[,which(colnames(reviews_ams)%in%reviews_ams_filterd)]
 
 # RENAMING VARIABLES # 
 rename(data_frame_ams, #willen we namen veranderen van variabelen? 
