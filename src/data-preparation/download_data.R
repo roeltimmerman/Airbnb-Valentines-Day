@@ -7,7 +7,7 @@ files = list(c(url='http://data.insideairbnb.com/the-netherlands/north-holland/a
                fn='listings-amsterdam.csv.gz'),
              c(url='http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-09-07/data/reviews.csv.gz',
                fn='reviews-amsterdam.csv.gz'),
-             c(url='http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-09-07/data/calendar.csv.gz',
+             c(url='http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2021-12-05/data/calendar.csv.gz',
                fn='calendar.csv.gz'))
 
 for (item in files) {
