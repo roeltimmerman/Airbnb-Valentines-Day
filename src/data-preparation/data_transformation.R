@@ -25,10 +25,6 @@ calendar_ams_filtered <- c('listing_id', 'date','available','price', 'minimum_ni
 calendar_ams_filtered <- calendar_ams[,which(colnames(calendar_ams)%in%calendar_ams_filtered)]
 
 
-
-
-
-
 # RENAMING VARIABLES # 
 calendar_ams_filtered <- calendar_ams_filtered %>% 
     rename(booked = available, 
@@ -37,7 +33,7 @@ calendar_ams_filtered <- calendar_ams_filtered %>%
 # MAKE BOOKED BINARY VARIABLE # 
 calendar_ams_filtered$booked <- ifelse(calendar_ams_filtered$booked=='f',1,0)
 
-# FILTER FOR SPECIFIC PERIOD #
+# CHANGE TYPE OF DATE TO DATE #
 calendar_ams_filtered <- calendar_ams_filtered %>% 
     group_by(date_old) %>% 
     mutate(date = as.Date(date_old))
@@ -45,10 +41,9 @@ calendar_ams_filtered <- calendar_ams_filtered %>%
 calendar_ams_filtered2 <- c('listing_id', 'date', 'booked', 'price', 'minimum_nights')
 calendar_ams_filtered2 <- calendar_ams_filtered[,which(colnames(calendar_ams_filtered)%in%calendar_ams_filtered2)]
 
+# FILTER FOR SPECIFIC PERIOD #
+calendar_ams_filtered3 <- calendar_ams_filtered2[calendar_ams_filtered2$date >= "2022-01-31" &
+    calendar_ams_filtered2$date <= "2022-02-28", ]
 
 
-      
-
-# CHECKING 
-table(calendar_ams_filtered$available)
 
