@@ -5,6 +5,7 @@ install.packages('dplyr')
 install.packages('ggplot2')
 install.packages('readr')
 install.packages('stringr')
+intall.packages('Sys.Date')
 
 # LOAD PACKAGES #
 library('tidyverse')
@@ -29,9 +30,25 @@ calendar_ams_filtered <- calendar_ams[,which(colnames(calendar_ams)%in%calendar_
 
 
 # RENAMING VARIABLES # 
-rename(data_frame_ams, #willen we namen veranderen van variabelen? 
-       )
+calendar_ams_filtered <- calendar_ams_filtered %>% 
+    rename(booked = available, 
+           date_old = date)
+
+# MAKE BOOKED BINARY VARIABLE # 
+calendar_ams_filtered$booked <- ifelse(calendar_ams_filtered$booked=='f',1,0)
+
+# FILTER FOR SPECIFIC PERIOD #
+calendar_ams_filtered <- calendar_ams_filtered %>% 
+    group_by(date_old) %>% 
+    mutate(date = as.Date(date_old))
+
+calendar_ams_filtered2 <- c('listing_id', 'date', 'booked', 'price', 'minimum_nights')
+calendar_ams_filtered2 <- calendar_ams_filtered[,which(colnames(calendar_ams_filtered)%in%calendar_ams_filtered2)]
+
+
+
+      
 
 # CHECKING 
-
+table(calendar_ams_filtered$available)
 
