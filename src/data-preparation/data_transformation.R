@@ -45,5 +45,6 @@ calendar_ams_filtered2 <- calendar_ams_filtered[,which(colnames(calendar_ams_fil
 calendar_ams_filtered3 <- calendar_ams_filtered2[calendar_ams_filtered2$date >= "2022-01-31" &
     calendar_ams_filtered2$date <= "2022-02-28", ]
 
-
-
+# MAKING DUMMY VARIABLE FOR VALINTINES DAY #
+calendar_ams_filtered3$date_dummy <- ifelse(calendar_ams_filtered3$date=="2022-02-14",1,0)
+table(calendar_ams_filtered3$date_dummy)
