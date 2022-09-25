@@ -1,8 +1,13 @@
-### DATA TRANSFORMATION ###
+######
 ## DOWNLOAD DATA ##
+#####
 
 dir.create('../../data')
 
+#to avoid downloading timeout#
+options(timeout = max(1000, getOption("timeout")))
+
+#downloading the files#
 files = list(c(url='http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-09-07/data/listings.csv.gz',
                fn='listings-amsterdam.csv.gz'),
              c(url='http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-09-07/data/reviews.csv.gz',
