@@ -1,6 +1,6 @@
 # How far can you go for love on Airbnb? - The effect of Valentine's Day on Airbnb listings
 
-Welcome to our research project! This research project is part of the [Data Preparation and Workflow Management (dPrep)](https://dprep.hannesdatta.com/) course at Tilburg University. The research aims to answer the following research question:
+Welcome to our research project! This research aims to answer the following research question:
 
 **What is the effect of Valentine's Day on Airbnb listings in Europe?**
 
@@ -43,3 +43,17 @@ DV: price and accomodation type/characteristics
 IV: Valentine's Day
 
 Moderator: city (size)
+
+**Results**
+
+## Repository overview
+
+## Running instructions
+
+
+## More resources
+
+
+## About
+
+This research project is part of the [Data Preparation and Workflow Management (dPrep)](https://dprep.hannesdatta.com/) course at Tilburg University and is conducted by Team 12. The contributors of the research are: [Anouk Bor](https://github.com/AnoukBor), [Eva Bos](https://github.com/EvaBos), [Bi Xuan Guo](https://github.com/bixuanguo), [Mandana Khabbazi](https://github.com/Mandanakhabbazi), [Indi Wieggers](https://github.com/indiwieggers123).
