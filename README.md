@@ -9,11 +9,11 @@ Welcome to our research project! This research aims to answer the following rese
 ## Motivation
 Valentine's day is celebrated yearly on the 14th of February. It is a day when romance takes centre stage and people show their love for each other with accompanying rituals. Specific behaviours and rituals that people often perform are giving gifts, showing affection, or going out for dinner or a romantic getaway [(Close & Zinkhan, 2006)](https://www.acrwebsite.org/volumes/v33/v33_10020.pdf). For overnight stays, Airbnb accommodation is often booked.
 
-This study proposes the following research question:
+Therefore, this study proposes the following research question:
 
 *What is the effect of Valentine's Day on Airbnb listings in Europe?*
 
-We zoom in on several major cities in Europe. This is interesting because not every country celebrates Valentine's Day to the same extent and/or not every city is equally popular. In addition, we look at whether it matters whether Valentine's Day falls on a weekend or not. For example, if Valentine's Day falls on a Monday, people may be less inclined to book an overnight stay than if it falls on a Friday. It is then possible that guests might postpone their overnight stays until the weekend. ~~As a result, we will look at data from different years.~~
+We zoom in on several major cities in Europe. This is interesting because not every country celebrates Valentine's Day to the same extent and/or not every city is equally popular. In addition, we look at whether it matters whether Valentine's Day falls on a weekend or not. For example, if Valentine's Day falls on a Monday, people may be less inclined to book an overnight stay than if it falls on a Friday. It is then possible that guests might postpone their overnight stays until the weekend.
 
 This leads to the following sub-questions:
 - What is the effect of Valentine's Day on the price of Airbnb listings in 'city'?
@@ -47,7 +47,18 @@ Moderator: city (size)
 **Results**
 
 ## Repository overview
-
+```
+├── README.md
+├── data
+├── gen
+│   ├── analysis
+│   ├── data-preparation
+│   └── paper
+└── src
+    ├── analysis
+    ├── data-preparation
+    └── paper
+```
 ## Running instructions
 
 
