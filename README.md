@@ -34,15 +34,19 @@ The data used in this research project was obtained from [Inside Airbnb](http://
 
 As discussed above Data from Inside Airbnb will be used to look at different cities in Europe regarding their Airbnb listings in the month of februari and especially Valentine's Day. The analysis of the Airbnb data will start with the city Amsterdam, and will later expand to doing the same analysis for other cities in Europe. --> note: for other cities definetely include city of love: Paris
 
-Analysis: 
+Analysis:
+
+Several ANOVA analyses?
 
 Variables:
 
-DV: price and accomodation type/characteristics
+DV: price, accomodation type/characteristics, number of bookings
 
 IV: Valentine's Day
 
 Moderator: city (size)
+
+![Conceptual model](https://user-images.githubusercontent.com/91567676/192151644-fab4ce64-46ab-46e4-8eb9-367f85869462.png)
 
 **Results**
 
