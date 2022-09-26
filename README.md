@@ -27,7 +27,7 @@ This leads to the following sub-questions:
 We expect that here would be more demand for Airbnb listings around this holiday. If demand increases, hosts can charge higher prices for their accomodations. Moreover, more accommodations for 2 people are likely to be booked, as couples usually celebrate Valentine's Day.
 
 ## Data
-The data used in this research project was obtained from [Inside Airbnb](http://insideairbnb.com/). The period of the data used is from February (year) - February (year) --> 5 years? (watch out for corona years?) -> since Valentine's day is in middle of feb, look at the weeks before and after, so maybe whole month?
+The data used in this research project was obtained from [Inside Airbnb](http://insideairbnb.com/). For this research, we looked into the data starting from two weeks before Valentine's Day 2022 (January 31st) untill two weeks after Valentine's day 2022 (February 18th) February (year). We created a dummy variable that indicates whether it is Valentine's Day or not. This allows us to compare the effect of Valentine's Day with other, 'normal' days. 
 
 ## Method and results
 **Method**
