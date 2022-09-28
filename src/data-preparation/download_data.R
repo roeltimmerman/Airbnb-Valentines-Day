@@ -54,6 +54,6 @@ calendar_rom <- read.csv(gzfile('../../data/calendar-rome.csv.gz'))
 reviews_rom <- read.csv(gzfile('../../data/reviews-rome.csv.gz'))
 
 # store data for Madrid
-list_mad <- read.csv(gzfile('../../data/listings-mardid.csv.gz')) 
+list_mad <- read.csv(gzfile('../../data/listings-madrid.csv.gz')) 
 calendar_mad <- read.csv(gzfile('../../data/calendar-madrid.csv.gz'))
 reviews_mad <- read.csv(gzfile('../../data/reviews-madrid.csv.gz'))
