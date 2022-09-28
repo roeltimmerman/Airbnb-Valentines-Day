@@ -28,9 +28,9 @@ files = list(c(url='http://data.insideairbnb.com/the-netherlands/north-holland/a
                fn='reviews-rome.csv.gz'),
              c(url='http://data.insideairbnb.com/spain/comunidad-de-madrid/madrid/2021-12-08/data/listings.csv.gz',
                fn='listings-madrid.csv.gz'),
-             c('http://data.insideairbnb.com/spain/comunidad-de-madrid/madrid/2021-12-08/data/calendar.csv.gz',
+             c(url='http://data.insideairbnb.com/spain/comunidad-de-madrid/madrid/2021-12-08/data/calendar.csv.gz',
                fn='calendar-madrid.csv.gz'),
-             c('http://data.insideairbnb.com/spain/comunidad-de-madrid/madrid/2021-12-08/data/reviews.csv.gz',
+             c(url='http://data.insideairbnb.com/spain/comunidad-de-madrid/madrid/2021-12-08/data/reviews.csv.gz',
                fn='reviews-madrid.csv.gz'))
 
 
