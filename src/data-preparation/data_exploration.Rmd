@@ -8,6 +8,25 @@ date: "2022-09-28"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r, echo=FALSE}
+# Load data
+list_ams <- read.csv('../../data/listings-amsterdam.csv.gz')
+```
+
+```{r, echo=FALSE, include=FALSE}
+# Load packages
+library(dplyr)
+library(tidyverse)
+```
+
+```{r, echo=FALSE}
+ggplot(list_ams, aes(x = room_type)) +
+  geom_bar(aes(fill = room_type), position = "dodge") +
+  labs(x = "Type of room", y = "Count", fill = "Type of room") +
+  scale_fill_viridis_d()
+```
+
+
 ## R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
