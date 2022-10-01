@@ -10,6 +10,17 @@ library('readr')
 library('stringr')
 
 #Input
+# Paris data
+list_par <- read.csv(gzfile('../../data/listings-paris.csv.gz')) 
+calendar_par <- read.csv(gzfile('../../data/calendar-paris.csv.gz'))
+
+# Rome data
+list_rom <- read.csv(gzfile('../../data/listings-rome.csv.gz')) 
+calendar_rom <- read.csv(gzfile('../../data/calendar-rome.csv.gz'))
+
+# Madrid data
+list_mad <- read.csv(gzfile('../../data/listings-madrid.csv.gz')) 
+calendar_mad <- read.csv(gzfile('../../data/calendar-madrid.csv.gz'))
 
 #Transformation
 ### ROME ###
@@ -52,6 +63,9 @@ table(calendar_rom_filtered3$valentinesday)
 #merge / right join
 rome_data <- inner_join(calendar_rom_filtered3, list_rom_filtered, by=c('listing_id','price', 'minimum_nights'))
 rome_data
+
+#add city variable#
+rome_data$city <- "Rome"
 
 summary(rome_data)
 
@@ -96,6 +110,9 @@ table(calendar_mad_filtered3$valentinesday)
 #merge / right join
 madrid_data <- inner_join(calendar_mad_filtered3, list_mad_filtered, by=c('listing_id','price', 'minimum_nights'))
 madrid_data
+
+#add city variable#
+madrid_data$city <- "Madrid"
 
 summary(madrid_data)
 
@@ -146,15 +163,17 @@ table(calendar_par_filtered3$valentinesday)
 paris_data <- inner_join(calendar_par_filtered3, list_par_filtered, by=c('listing_id','price', 'minimum_nights'))
 paris_data
 
+#add city variable#
+paris_data$city <- "Paris"
+paris_data
+
 summary(paris_data)
 
-### Add City size moderator to each city dataset + add column of city name #
+### Add City size moderator to each city dataset? or use #listings for city size moderator#
 
 ### MERGE THE FILES TO 1 ###
-# Merge the three cities to one big dataset?
-# use full_join? join on date 
-# group_by date en daarna op city
+complete_data <- bind_rows(madrid_data, paris_data, rome_data)
+complete_data
 
-#OUTPUT
-#write dataset to csv file
-
+#Ouput -> write dataset to csv file
+write.csv(complete_data, "../../data/complete_data.csv")
