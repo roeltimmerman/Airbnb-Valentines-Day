@@ -7,14 +7,8 @@ dir.create('../../data')
 #to avoid downloading timeout#
 options(timeout = max(1000, getOption("timeout")))
 
-#downloading the files from Inside Aibnb#
-files = list(c(url='http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-09-07/data/listings.csv.gz',
-               fn='listings-amsterdam.csv.gz'),
-             c(url='http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-09-07/data/calendar.csv.gz',
-               fn='calendar-amsterdam.csv.gz'),
-             c(url='http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2021-12-05/data/reviews.csv.gz',
-               fn='reviews-amsterdam.csv.gz'),
-             c(url='http://data.insideairbnb.com/france/ile-de-france/paris/2021-12-07/data/listings.csv.gz',
+#downloading the files from Inside Airbnb#
+files = list(c(url='http://data.insideairbnb.com/france/ile-de-france/paris/2021-12-07/data/listings.csv.gz',
                fn ='listings-paris.csv.gz'),
              c(url='http://data.insideairbnb.com/france/ile-de-france/paris/2021-12-07/data/calendar.csv.gz',
                fn='calendar-paris.csv.gz'),
@@ -37,11 +31,6 @@ files = list(c(url='http://data.insideairbnb.com/the-netherlands/north-holland/a
 for (item in files) {
     download.file(item['url'], paste0('../../data/', item['fn']))
 }
-
-# store data for Amsterdam 
-list_ams <- read.csv(gzfile('../../data/listings-amsterdam.csv.gz')) 
-calendar_ams <- read.csv(gzfile('../../data/calendar-amsterdam.csv.gz'))
-reviews_ams <- read.csv(gzfile('../../data/reviews-amsterdam.csv.gz'))
 
 # store data for Paris
 list_par <- read.csv(gzfile('../../data/listings-paris.csv.gz')) 
