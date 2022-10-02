@@ -3,11 +3,11 @@
 ########################
 
 # LOAD PACKAGES #
-library('tidyverse')
-library('dplyr')
-library('ggplot2')
-library('readr')
-library('stringr')
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(stringr)
 
 #Input
 # Paris data
