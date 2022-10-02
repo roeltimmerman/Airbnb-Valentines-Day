@@ -13,12 +13,12 @@ Therefore, this study proposes the following research question:
 
 *What is the effect of Valentine's Day on Airbnb listings in Europe?*
 
-We zoom in on several major cities in Europe. This is interesting because not every country celebrates Valentine's Day to the same extent and/or not every city is equally popular. For this project, will be focusing on the following subquestions:
+During this project, we will zoom in on several major cities in Europe. We find this interesting as countries cebelrate Valentine's Day with different intensities. Furthermore, will be focusing on the following subquestions:
 - What is the effect of Valentine's Day on the price of Airbnb listings in 'city'?
 - Which type of accommodation is booked more than usual on Valentine's Day in 'city' and by how much?
 - Is there a significant difference in the number of bookings on Airbnb on Valentine's day? If so, is this difference also greater in a city with a larger population?
 
-We expect that there is an increase in demand for Airbnb accomodations during Valentine's Day. When demand increases, hosts are allowed to charge higher prices for their accomodations. Therefore, we expect the average price of Airbnb listings to increase during Valentines's Day. Moreover, we expect that more accommodations for 2 people are likely to be booked, as couples usually celebrate Valentine's Day. Lastly, we expect to see a difference in the number of bookings during Valentin's day to be bigger in large cities. 
+We expect that there will be an increase in demand for Airbnb accomodations during Valentine's Day. When demand increases, hosts are allowed to charge higher prices for their accomodations. Therefore, we expect the average price of Airbnb listings to increase during Valentines's Day. Moreover, we expect that more accommodations for 2 people are likely to be booked, as couples usually celebrate Valentine's Day. Lastly, we expect to see a difference in the number of bookings during Valentin's day to be bigger in large cities. 
 
 ## Data
 The data used in this research project was obtained from [Inside Airbnb](http://insideairbnb.com/). For this research, we looked into the data starting from two weeks before Valentine's Day 2022 (January 31st) untill two weeks after Valentine's day 2022 (February 18th) February (year). We created a dummy variable that indicates whether it is Valentine's Day or not. This allows us to compare the effect of Valentine's Day with other, 'normal' days. For this analysis, we compare four major cities in Europe: Paris, Amsterdam, Rome and Madrid. 
