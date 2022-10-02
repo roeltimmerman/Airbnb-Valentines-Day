@@ -67,6 +67,9 @@ rome_data
 #add city variable#
 rome_data$city <- "Rome"
 
+#add number of listings variable#
+rome_data$n_listings <- nrow(list_rom)
+
 summary(rome_data)
 
 ### MADRID ###
@@ -113,6 +116,9 @@ madrid_data
 
 #add city variable#
 madrid_data$city <- "Madrid"
+
+#add number of listings variable#
+madrid_data$n_listings <- nrow(list_mad)
 
 summary(madrid_data)
 
@@ -166,6 +172,9 @@ paris_data
 #add city variable#
 paris_data$city <- "Paris"
 paris_data
+
+#add number of listings variable#
+paris_data$n_listings <- nrow(list_par)
 
 summary(paris_data)
 
