@@ -1,6 +1,8 @@
 ---
 title: "Data exploration Airbnb Valentine's Day"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 date: "2022-09-28"
 ---
 
@@ -21,11 +23,11 @@ library(dplyr)
 library(tidyverse)
 ```
 
-```{r, include=FALSE}
+```{r, echo=FALSE, include=FALSE}
 head(list_par)
 ```
 
-```{r, include=FALSE}
+```{r, echo=FALSE, include=FALSE}
 summary(list_par)
 lapply(list_par, summary)
 ```
@@ -34,9 +36,22 @@ lapply(list_par, summary)
 summary(list_par$room_type)
 ```
 
-```{r}
+**Number of rooms in Paris**
+```{r, echo=FALSE}
 table(list_par$room_type)
+```
 
+**Number of rooms in Madrid**
+```{r, echo=FALSE}
+table(list_mad$room_type)
+```
+
+**Number of rooms in Rome**
+```{r, echo=FALSE}
+table(list_rom$room_type)
+```
+
+```{r, echo=FALSE}
 object <- table(list_par$room_type)
 prop.table(object)
 ```
@@ -44,19 +59,67 @@ prop.table(object)
 ```{r, echo=FALSE}
 # Frequency Bar Graph
 ggplot(list_par, aes(x = room_type)) +
-  geom_bar(aes(fill = room_type), position = "dodge") +
-  labs(x = "Type of room", y = "Count", fill = "Type of room") +
-  scale_fill_viridis_d()
+    geom_bar(aes(fill = room_type), position = "dodge") +
+    ggtitle("Paris") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
+    scale_fill_viridis_d()
+ggplot(list_mad, aes(x = room_type)) +
+    geom_bar(aes(fill = room_type), position = "dodge") +
+    ggtitle("Madrid") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
+    scale_fill_viridis_d()
+ggplot(list_rom, aes(x = room_type)) +
+    geom_bar(aes(fill = room_type), position = "dodge") +
+    ggtitle("Rome") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
+    scale_fill_viridis_d()
 ```
-
 
 ```{r, echo=FALSE}
 # Percentage/Proportion Bar Graph
 ggplot(list_par, aes(x = room_type)) +
   geom_bar(aes(y = (..count..)/sum(..count..), fill = room_type), position = "dodge") +
-  labs(x = "Type of room", y = "Count", fill = "Type of room") +
+  labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
   scale_fill_viridis_d() +
-  scale_y_continuous(labels = scales::percent_format(), name = "Proportion")
+  scale_y_continuous(labels = scales::percent_format(), name = "Percentage of rooms")
+```
+
+```{r, echo=FALSE}
+room_type_1 <- data.frame(
+  room_type = "Entire home/apt",
+  number_rooms = c(40917, 10846, 15873),
+  city = c("Paris", "Madrid", "Rome"))
+
+room_type_2 <- data.frame(
+  room_type = "Hotel room",
+  number_rooms = c(1151, 153, 964),
+  city = c("Paris", "Madrid", "Rome"))
+
+room_type_3 <- data.frame(
+  room_type = "Private room",
+  number_rooms = c(7039, 6594, 7650),
+  city = c("Paris", "Madrid", "Rome")) 
+
+room_type_4 <- data.frame(
+  room_type = "Shared room",
+  number_rooms = c(322, 238, 139),
+  city = c("Paris", "Madrid", "Rome")) 
+
+room_type <- rbind(room_type_1, room_type_2, room_type_3,room_type_4)
+
+room_type$room_type <- as.factor(room_type$room_type)
+room_type$city <- as.factor(room_type$city)
+
+ggplot(room_type, aes(y = number_rooms, x = room_type)) +
+  geom_bar(aes(fill = room_type), stat = "identity", position = position_dodge()) +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank()) +
+  facet_grid(~city) +
+  labs(y = "Number of rooms", x = "Type of room", fill = "Type of room") +
+    scale_fill_viridis_d()
 ```
 
 ## R Markdown
