@@ -1,8 +1,8 @@
 ---
 title: "Data exploration Airbnb Valentine's Day"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 date: "2022-09-28"
 ---
 
@@ -113,6 +113,7 @@ legend("topright", c("Entire home/apt","Hotel room","Private room","Shared room"
 
 
 **Optie 1**
+
 ```{r, echo=FALSE}
 # Frequency Bar Graph
 ggplot(list_mad, aes(x = room_type)) +
@@ -164,6 +165,7 @@ ggplot(list_rom, aes(x = room_type)) +
 
 
 **Optie 2**
+
 ```{r, echo=FALSE}
 ggplot(total_list, aes(x = room_type)) +
     geom_bar(aes(fill = room_type), position = "dodge") +
@@ -173,7 +175,6 @@ ggplot(total_list, aes(x = room_type)) +
     labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
     scale_fill_viridis_d()
 ```
-**Niet goed nog, krijg hem niet in percentages**
 
 ```{r, echo=FALSE}
 ggplot(total_list, aes(x = room_type)) +
@@ -185,6 +186,8 @@ ggplot(total_list, aes(x = room_type)) +
     scale_fill_viridis_d() +
     scale_y_continuous(labels = scales::percent_format(), name = "Percentage of rooms")
 ```
+
+**Niet goed nog, krijg hem niet in percentages**
 
 ## R Markdown
 
