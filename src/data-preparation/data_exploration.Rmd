@@ -10,7 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Load data
-list_ams <- read.csv('../../data/listings-amsterdam.csv.gz')
+list_par <- read.csv(gzfile('../../data/listings-paris.csv.gz'))
+list_rom <- read.csv(gzfile('../../data/listings-rome.csv.gz')) 
+list_mad <- read.csv(gzfile('../../data/listings-madrid.csv.gz'))
 ```
 
 ```{r, echo=FALSE, include=FALSE}
@@ -19,13 +21,43 @@ library(dplyr)
 library(tidyverse)
 ```
 
+```{r, include=FALSE}
+head(list_par)
+```
+
+```{r, include=FALSE}
+summary(list_par)
+lapply(list_par, summary)
+```
+
+```{r}
+summary(list_par$room_type)
+```
+
+```{r}
+table(list_par$room_type)
+
+object <- table(list_par$room_type)
+prop.table(object)
+```
+
 ```{r, echo=FALSE}
-ggplot(list_ams, aes(x = room_type)) +
+# Frequency Bar Graph
+ggplot(list_par, aes(x = room_type)) +
   geom_bar(aes(fill = room_type), position = "dodge") +
   labs(x = "Type of room", y = "Count", fill = "Type of room") +
   scale_fill_viridis_d()
 ```
 
+
+```{r, echo=FALSE}
+# Percentage/Proportion Bar Graph
+ggplot(list_par, aes(x = room_type)) +
+  geom_bar(aes(y = (..count..)/sum(..count..), fill = room_type), position = "dodge") +
+  labs(x = "Type of room", y = "Count", fill = "Type of room") +
+  scale_fill_viridis_d() +
+  scale_y_continuous(labels = scales::percent_format(), name = "Proportion")
+```
 
 ## R Markdown
 
