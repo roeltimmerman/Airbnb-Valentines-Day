@@ -1,8 +1,8 @@
 ---
 title: "Data exploration Airbnb Valentine's Day"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 date: "2022-09-28"
 ---
 
@@ -29,44 +29,103 @@ head(list_par)
 
 ```{r, echo=FALSE, include=FALSE}
 summary(list_par)
-lapply(list_par, summary)
 ```
 
 ```{r}
+summary(list_mad$room_type)
+summary(list_mad$price)
 summary(list_par$room_type)
-```
-
-**Number of rooms in Paris**
-```{r, echo=FALSE}
-table(list_par$room_type)
-```
-
-**Number of rooms in Madrid**
-```{r, echo=FALSE}
-table(list_mad$room_type)
-```
-
-**Number of rooms in Rome**
-```{r, echo=FALSE}
-table(list_rom$room_type)
+summary(list_par$price)
+summary(list_rom$room_type)
+summary(list_rom$price)
 ```
 
 ```{r, echo=FALSE}
-object <- table(list_par$room_type)
-prop.table(object)
+subset_list_mad <- data.frame(
+  id = list_mad$id,
+  name = list_mad$name,
+  room_type = list_mad$room_type,
+  city = "Madrid"
+)
+
+subset_list_par <- data.frame(
+  id = list_par$id,
+  name = list_par$name,
+  room_type = list_par$room_type,
+  city = "Paris"
+)
+
+subset_list_rom <- data.frame(
+  id = list_rom$id,
+  name = list_rom$name,
+  room_type = list_rom$room_type,
+  city = "Rome"
+)
+
+total_list <- rbind(subset_list_mad, subset_list_par, subset_list_rom)
 ```
+
+**Number of rooms per city**
+```{r, echo=FALSE}
+table(total_list$room_type, total_list$city)
+```
+
+**Percentage number of rooms in Madrid**
+```{r, echo=FALSE}
+madrid <- table(list_mad$room_type)
+prop.table(madrid)
+```
+
+**Percentage number of rooms in Paris**
+```{r, echo=FALSE}
+paris <- table(list_par$room_type)
+prop.table(paris)
+```
+
+**Percentage number of rooms in Rome**
+```{r, echo=FALSE}
+rome <- table(list_rom$room_type)
+prop.table(rome)
+```
+
+```{r, echo=FALSE}
+# Basic piechart
+piepercent_mad<- round(100*table(list_mad$room_type)/sum(table(list_mad$room_type)), 1)
+
+pie(table(list_mad$room_type), labels = piepercent_mad, main = "Madrid pie chart", col = rainbow(length(table(list_mad$room_type))))
+legend("topright", c("Entire home/apt","Hotel room","Private room","Shared room"), cex = 0.8,
+       fill = rainbow(length(table(list_mad$room_type))))
+```
+```{r, echo=FALSE}
+# Basic piechart
+piepercent_par<- round(100*table(list_par$room_type)/sum(table(list_par$room_type)), 1)
+
+pie(table(list_par$room_type), labels = piepercent_par, main = "Paris pie chart", col = rainbow(length(table(list_par$room_type))))
+legend("topright", c("Entire home/apt","Hotel room","Private room","Shared room"), cex = 0.8,
+       fill = rainbow(length(table(list_par$room_type))))
+```
+
+```{r, echo=FALSE}
+# Basic piechart
+piepercent_rom<- round(100*table(list_rom$room_type)/sum(table(list_rom$room_type)), 1)
+
+pie(table(list_rom$room_type), labels = piepercent_rom, main = "Rome pie chart", col = rainbow(length(table(list_rom$room_type))))
+legend("topright", c("Entire home/apt","Hotel room","Private room","Shared room"), cex = 0.8,
+       fill = rainbow(length(table(list_rom$room_type))))
+```
+**Optie 1**
 
 ```{r, echo=FALSE}
 # Frequency Bar Graph
-ggplot(list_par, aes(x = room_type)) +
-    geom_bar(aes(fill = room_type), position = "dodge") +
-    ggtitle("Paris") +
-    theme(plot.title = element_text(hjust = 0.5)) +
-    labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
-    scale_fill_viridis_d()
 ggplot(list_mad, aes(x = room_type)) +
     geom_bar(aes(fill = room_type), position = "dodge") +
     ggtitle("Madrid") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
+    scale_fill_viridis_d()
+ggplot(list_par, aes(x = room_type)) +
+    geom_bar(aes(fill = room_type), position = "dodge") +
+    ggtitle("Paris") +
     theme(plot.title = element_text(hjust = 0.5)) +
     labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
     scale_fill_viridis_d()
@@ -78,48 +137,54 @@ ggplot(list_rom, aes(x = room_type)) +
     scale_fill_viridis_d()
 ```
 
+
 ```{r, echo=FALSE}
 # Percentage/Proportion Bar Graph
+ggplot(list_mad, aes(x = room_type)) +
+    geom_bar(aes(y = (..count..)/sum(..count..), fill = room_type), position = "dodge") +
+    ggtitle("Madrid") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
+    scale_fill_viridis_d() +
+    scale_y_continuous(labels = scales::percent_format(), name = "Percentage of rooms")
 ggplot(list_par, aes(x = room_type)) +
-  geom_bar(aes(y = (..count..)/sum(..count..), fill = room_type), position = "dodge") +
-  labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
-  scale_fill_viridis_d() +
-  scale_y_continuous(labels = scales::percent_format(), name = "Percentage of rooms")
+    geom_bar(aes(y = (..count..)/sum(..count..), fill = room_type), position = "dodge") +
+    ggtitle("Paris") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
+    scale_fill_viridis_d() +
+    scale_y_continuous(labels = scales::percent_format(), name = "Percentage of rooms")
+ggplot(list_rom, aes(x = room_type)) +
+    geom_bar(aes(y = (..count..)/sum(..count..), fill = room_type), position = "dodge") +
+    ggtitle("Rome") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
+    scale_fill_viridis_d() +
+    scale_y_continuous(labels = scales::percent_format(), name = "Percentage of rooms")
 ```
 
+**Optie 2**
+
 ```{r, echo=FALSE}
-room_type_1 <- data.frame(
-  room_type = "Entire home/apt",
-  number_rooms = c(40917, 10846, 15873),
-  city = c("Paris", "Madrid", "Rome"))
-
-room_type_2 <- data.frame(
-  room_type = "Hotel room",
-  number_rooms = c(1151, 153, 964),
-  city = c("Paris", "Madrid", "Rome"))
-
-room_type_3 <- data.frame(
-  room_type = "Private room",
-  number_rooms = c(7039, 6594, 7650),
-  city = c("Paris", "Madrid", "Rome")) 
-
-room_type_4 <- data.frame(
-  room_type = "Shared room",
-  number_rooms = c(322, 238, 139),
-  city = c("Paris", "Madrid", "Rome")) 
-
-room_type <- rbind(room_type_1, room_type_2, room_type_3,room_type_4)
-
-room_type$room_type <- as.factor(room_type$room_type)
-room_type$city <- as.factor(room_type$city)
-
-ggplot(room_type, aes(y = number_rooms, x = room_type)) +
-  geom_bar(aes(fill = room_type), stat = "identity", position = position_dodge()) +
-  theme(axis.text.x = element_blank(),
-        axis.ticks.x = element_blank()) +
-  facet_grid(~city) +
-  labs(y = "Number of rooms", x = "Type of room", fill = "Type of room") +
+ggplot(total_list, aes(x = room_type)) +
+    geom_bar(aes(fill = room_type), position = "dodge") +
+    theme(axis.text.x = element_blank(),
+          axis.ticks.x = element_blank()) +
+    facet_grid(~city) +
+    labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
     scale_fill_viridis_d()
+```
+**Niet goed nog, krijg hem niet in percentages**
+
+```{r, echo=FALSE}
+ggplot(total_list, aes(x = room_type)) +
+    geom_bar(aes(y = (..count..)/sum(..count..), fill = room_type), position = "dodge") +
+    theme(axis.text.x = element_blank(),
+          axis.ticks.x = element_blank()) +
+    facet_grid(~city) +
+    labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
+    scale_fill_viridis_d() +
+    scale_y_continuous(labels = scales::percent_format(), name = "Percentage of rooms")
 ```
 
 ## R Markdown
