@@ -17,7 +17,6 @@ table(complete_data$valentinesday)
 complete_data$price <- as.numeric(complete_data$price)
 
 
-
 table(complete_data$price)
 summary(complete_data)
 as.factor(complete_data$valentinesday)
