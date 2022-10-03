@@ -26,17 +26,6 @@ for (item in files) {
     download.file(item['url'], paste0('../../data/', item['fn']))
 }
 
-# store data for Paris
-list_par <- read.csv(gzfile('../../data/listings-paris.csv.gz')) 
-calendar_par <- read.csv(gzfile('../../data/calendar-paris.csv.gz'))
-
-# store data for Rome
-list_rom <- read.csv(gzfile('../../data/listings-rome.csv.gz')) 
-calendar_rom <- read.csv(gzfile('../../data/calendar-rome.csv.gz'))
-
-# store data for Madrid
-list_mad <- read.csv(gzfile('../../data/listings-madrid.csv.gz')) 
-calendar_mad <- read.csv(gzfile('../../data/calendar-madrid.csv.gz'))
 
 
 
