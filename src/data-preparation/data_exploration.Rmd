@@ -27,10 +27,6 @@ library(tidyverse)
 head(list_par)
 ```
 
-```{r, echo=FALSE, include=FALSE}
-summary(list_par)
-```
-
 ```{r}
 summary(list_mad$room_type)
 summary(list_mad$price)
@@ -92,29 +88,31 @@ prop.table(rome)
 # Basic piechart
 piepercent_mad<- round(100*table(list_mad$room_type)/sum(table(list_mad$room_type)), 1)
 
-pie(table(list_mad$room_type), labels = piepercent_mad, main = "Madrid pie chart", col = rainbow(length(table(list_mad$room_type))))
+pie(table(list_mad$room_type), labels = piepercent_mad, main = "Madrid pie chart", col = rainbow(length(table(list_mad$room_type)), s = 0.5))
 legend("topright", c("Entire home/apt","Hotel room","Private room","Shared room"), cex = 0.8,
-       fill = rainbow(length(table(list_mad$room_type))))
+       fill = rainbow(length(table(list_mad$room_type)), s = 0.5))
 ```
 ```{r, echo=FALSE}
 # Basic piechart
 piepercent_par<- round(100*table(list_par$room_type)/sum(table(list_par$room_type)), 1)
 
-pie(table(list_par$room_type), labels = piepercent_par, main = "Paris pie chart", col = rainbow(length(table(list_par$room_type))))
+pie(table(list_par$room_type), labels = piepercent_par, main = "Paris pie chart", col = rainbow(length(table(list_par$room_type)), s = 0.5))
 legend("topright", c("Entire home/apt","Hotel room","Private room","Shared room"), cex = 0.8,
-       fill = rainbow(length(table(list_par$room_type))))
+       fill = rainbow(length(table(list_par$room_type)), s = 0.5))
 ```
 
 ```{r, echo=FALSE}
 # Basic piechart
 piepercent_rom<- round(100*table(list_rom$room_type)/sum(table(list_rom$room_type)), 1)
 
-pie(table(list_rom$room_type), labels = piepercent_rom, main = "Rome pie chart", col = rainbow(length(table(list_rom$room_type))))
+pie(table(list_rom$room_type), labels = piepercent_rom, main = "Rome pie chart", col = rainbow(length(table(list_rom$room_type)), s = 0.5))
 legend("topright", c("Entire home/apt","Hotel room","Private room","Shared room"), cex = 0.8,
-       fill = rainbow(length(table(list_rom$room_type))))
+       fill = rainbow(length(table(list_rom$room_type)), s = 0.5))
 ```
-**Optie 1**
 
+
+
+**Optie 1**
 ```{r, echo=FALSE}
 # Frequency Bar Graph
 ggplot(list_mad, aes(x = room_type)) +
@@ -163,8 +161,9 @@ ggplot(list_rom, aes(x = room_type)) +
     scale_y_continuous(labels = scales::percent_format(), name = "Percentage of rooms")
 ```
 
-**Optie 2**
 
+
+**Optie 2**
 ```{r, echo=FALSE}
 ggplot(total_list, aes(x = room_type)) +
     geom_bar(aes(fill = room_type), position = "dodge") +
