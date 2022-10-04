@@ -16,7 +16,7 @@ complete_data %>%
     geom_boxplot()
 
 summary(complete_data$valentinesday)
-
+##test
 --
 library(dplyr)
 group_by(complete_data, complete_data$valentinesday) %>% 
