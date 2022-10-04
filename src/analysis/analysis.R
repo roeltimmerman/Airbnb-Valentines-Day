@@ -3,6 +3,11 @@
 # add to other documents
 install.packages('ggpubr')
 library(ggpubr)
+library(readr)
+
+# Input
+complete_data <- read.csv("../../gen/temp/complete_data.csv")
+
 
 ## T.TEST FOR PRICE AND VALENTINESDAY ##
 # Assumptions for T-test
