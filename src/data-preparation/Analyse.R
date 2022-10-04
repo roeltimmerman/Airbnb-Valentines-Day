@@ -4,43 +4,27 @@
 complete_data$price <- as.numeric(as.factor(complete_data$price))
 t_test_price <- t.test(price ~ valentinesday, complete_data)
 t_test_price
-plot(t.test(price ~ valentinesday, complete_data), x = "price", y = "valentinesday", width = 0.2)
 
-plot(t.test(price ~ valentinesday, complete_data))
-
-library(ggplot2)
-ggplot(complete_data,aes(x=valentinesday,y=valentinesday,col=red)+geom_boxplot())
-
-complete_data %>% 
-    ggplot(aes(valentinesday, price)) +
-    geom_boxplot()
-
-summary(complete_data$valentinesday)
-##test
---
 library(dplyr)
 group_by(complete_data, complete_data$valentinesday) %>% 
     summarise(
         count = n(),
-        mean = mean(price, na.rm = TRUE),
-        sd =  sd(price, na.rm = TRUE)
+        mean = mean(complete_data$price, na.rm = TRUE),
+        sd =  sd(complete_data$price, na.rm = TRUE)
     )
-    
+
 install.packages('ggpubr')
 library(ggpubr)
-ggboxplot(complete_data, x=valentinesday, y=price,
-          color='valentinesday', palette = c("#00AFBB", "#E7B800"),
-          ylab= 'price', xlab='valentinesday)
-
-
-
-
-
-
-
+ggboxplot(complete_data, x="valentinesday", y="price",
+          color="valentinesday", palette = c("#00AFBB", "#E7B800"),
+          ylab= "Price", xlab="Valentinesday")
 
 # Price per city #
-lapply(split(complete_data, factor(complete_data$city)), function(x)t.test(data=x, price ~ valentinesday, paired=FALSE))
+lapply(split(complete_data, factor(complete_data$city)), function(x)t.test(data=x, price ~ valentinesday, paired=FALSE)) 
+
+ggplot(complete_data, aes(x=valentinesday, y=price, fill=city)) + 
+    geom_boxplot() +
+    facet_wrap(~valentinesday, scale="free")
 
 ## LOGISTIC REGRESSION FOR BOOKINGS AND VALENTINESDAY ##
 # Bookings in total #
@@ -50,14 +34,4 @@ exp(glm1$coefficients)
 # Bookings per city #
 glm1_per_city <- lapply(split(complete_data, factor(complete_data$city)), function(x)glm(data=x, booked ~ valentinesday))
 glm1_per_city
-exp(glm1_per_city$coefficents) 
-
-
-
-
-
-
-
-
-
-
+exp(glm1_per_city$coefficents)
