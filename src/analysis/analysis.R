@@ -6,7 +6,7 @@ library(ggpubr)
 library(readr)
 
 # Input
-complete_data <- read.csv("../../gen/temp/complete_data.csv")
+complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv")
 
 
 ## T.TEST FOR PRICE AND VALENTINESDAY ##
