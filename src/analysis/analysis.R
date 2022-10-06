@@ -4,6 +4,9 @@ library(ggplot2)
 library(tidyverse)
 library(ggpubr)
 
+# Create directory #
+dir.create('../../gen/analysis/output', recursive = T)
+
 ## Input ##
 complete_data <- read.csv("../../gen/temp/complete_data.csv") 
 
@@ -44,3 +47,4 @@ ggplot(complete_data, aes(x=valentinesday, y=price, fill=city)) +
     theme(axis.text.x=element_blank(),
           axis.ticks.x=element_blank())
 
+## Output ##
