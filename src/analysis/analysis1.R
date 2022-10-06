@@ -23,12 +23,12 @@ valentinesday_yes_no <- table(complete_data$valentinesday)
 
 # Assumptions (normality and outliers)
 set.seed(5000)
-complete_data_sample <- rnorm(4999)
+complete_data_sample <- rnorm(5000)
 shapiro.test(complete_data_sample)
 
-ggboxplot(complete_data, x="valentinesday", y="price",
-          color="valentinesday", palette = c("#00AFBB", "#E7B800"),
-          ylab= "Price", xlab="Valentinesday")
+price_valentinesday_boxplot <- ggboxplot(complete_data, x="valentinesday", y="price",
+                                         color="valentinesday", palette = c("#00AFBB", "#E7B800"),
+                                         ylab= "Price", xlab="Valentinesday")
 
 # Price in total 
 t_test_price <- t.test(price ~ valentinesday, complete_data) 
