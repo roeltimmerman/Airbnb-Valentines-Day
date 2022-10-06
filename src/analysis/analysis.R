@@ -10,6 +10,14 @@ complete_data <- read.csv("../../gen/temp/complete_data.csv")
 # Data transformation for analysis 1 
 complete_data$price <- as.numeric(as.factor(complete_data$price)) 
 
+# Descriptive statistics 
+summary(complete_data$price)
+table(complete_data$price)
+hist(complete_data$price, xlab = 'price') 
+
+summary(complete_data$valentinesday)
+table(complete_data$valentinesday)
+
 # Assumptions (outliers)
 ggboxplot(complete_data, x="valentinesday", y="price",
           color="valentinesday", palette = c("#00AFBB", "#E7B800"),
