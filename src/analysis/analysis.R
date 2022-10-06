@@ -32,5 +32,7 @@ lapply(split(complete_data, factor(complete_data$city)), function(x)t.test(data=
 # Plot for different cities 
 ggplot(complete_data, aes(x=valentinesday, y=price, fill=city)) + 
     geom_boxplot() +
-    facet_wrap(~valentinesday, scale="free")
+    facet_wrap(~valentinesday, scale="free") +
+    theme(axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())
 
