@@ -16,8 +16,10 @@ summary(complete_data$booked)
 table(complete_data$booked)
 hist(complete_data$booked, xlab = 'booked')
 
-# Assumptions (outliers)
-
+# Assumptions (normality)
+set.seed(0)
+complete_data_sample <- rnorm(4999)
+shapiro.test(complete_data_sample)
 
 # Total bookings 
 glm1 <- glm(booked ~ valentinesday, complete_data, family = binomial) 
