@@ -1,5 +1,5 @@
 DATA = ../../data
-TEMP = ../../gen/data-preparation/temp
+TEMP = ../../gen/temp
 
 all: $(DATA)/listings-paris.csv.gz $(DATA)/calendar-paris.csv.gz $(DATA)/listings-rome.csv.gz $(DATA)/calendar-rome.csv.gz $(DATA)/listings-madrid.csv.gz $(DATA)/calendar-madrid.csv.gz $(TEMP)/complete_data.csv
 
