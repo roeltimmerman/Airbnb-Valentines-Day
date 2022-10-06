@@ -183,9 +183,10 @@ summary(paris_data)
 
 ### Add City size moderator to each city dataset? or use #listings for city size moderator#
 
-### MERGE THE FILES TO 1 ###
-complete_data <- bind_rows(madrid_data, paris_data, rome_data)
-complete_data
+### MERGE THE FILES TO 1 & REMOVE MISSINGS ###
+complete_data_withNA <- bind_rows(madrid_data, paris_data, rome_data)
+
+complete_data <- na.omit(complete_data)
 
 #Ouput -> write dataset to csv file
 write.csv(complete_data, "../../gen/temp/complete_data.csv")
