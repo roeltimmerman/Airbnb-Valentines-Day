@@ -1,19 +1,17 @@
 #### Analysis 2 Logistic regression for bookings and valentinesday 
 ### Library
+library(tidyverse)
 library(ggplot2)
 
 ## Input 
 complete_data <- read.csv("../../gen/temp/complete_data.csv") 
 
-# Assumptions 
-# Outliers 
+# Assumptions (outliers)
 ggplot(complete_data, aes(x=valentinesday, y=booked, fill=city)) +
     geom_boxplot() +
     facet_wrap(~valentinesday, scale="free") 
 
 #Outliers -> no outliers in the boxplot -> KLOPT NOG NIET HELEMAAL 
-
-
 
 # Total bookings 
 glm1 <- glm(booked ~ valentinesday, complete_data, family = binomial) 
