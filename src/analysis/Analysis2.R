@@ -24,6 +24,7 @@ glm1_chisqdf <- glm1$df.null-glm1$df.residual
 glm1_per_city <- lapply(split(complete_data, factor(complete_data$city)), function(x)glm(data=x, booked ~ valentinesday))
 glm1_per_city
 exp(glm1_per_city$coefficents)
+lapply(glm1_per_city, function(x) exp(x$coefficients))
 
 
 
