@@ -19,7 +19,7 @@ summary(complete_data$valentinesday)
 table(complete_data$valentinesday)
 
 # Assumptions (normality and outliers)
-set.seed(0)
+set.seed(5000)
 complete_data_sample <- rnorm(4999)
 shapiro.test(complete_data_sample)
 
