@@ -3,7 +3,7 @@
 ########################
 
 # creating gen/temp directory
-dir.create('../../gen/data-preparation/temp', recursive = T)
+dir.create('../../gen/temp', recursive = T)
 
 # LOAD PACKAGES #
 library(tidyverse)
