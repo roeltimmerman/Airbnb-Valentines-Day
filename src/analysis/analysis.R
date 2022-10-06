@@ -24,7 +24,7 @@ ggboxplot(complete_data, x="valentinesday", y="price",
           color="valentinesday", palette = c("#00AFBB", "#E7B800"),
           ylab= "Price", xlab="Valentinesday")
 
-hist(complete_data$price, xlab = 'price') 
+hist(complete_data$price, xlab = 'price in €') 
 
 # Price per city # 
 lapply(split(complete_data, factor(complete_data$city)), function(x)t.test(data=x, price ~ valentinesday, paired=FALSE))
