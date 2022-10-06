@@ -7,6 +7,15 @@ library(ggpubr)
 ## Input 
 complete_data <- read.csv("../../gen/temp/complete_data.csv") 
 
+# Descriptives
+summary(complete_data$price)
+table(complete_data$price)
+hist(complete_data$price, xlab = 'price') 
+
+summary(complete_data$booked)
+table(complete_data$booked)
+hist(complete_data$booked, xlab = 'booked')
+
 # Assumptions (outliers)
 
 
@@ -24,7 +33,9 @@ glm1_chisqdf <- glm1$df.null-glm1$df.residual
 glm1_per_city <- lapply(split(complete_data, factor(complete_data$city)), function(x)glm(data=x, booked ~ valentinesday))
 glm1_per_city
 exp(glm1_per_city$coefficents)
-lapply(glm1_per_city, function(x) exp(x$coefficients))
+
+lapply(glm1_per_city, function(x) 
+exp(x$coefficients))
 
 
 
