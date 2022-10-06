@@ -18,7 +18,11 @@ hist(complete_data$price, xlab = 'price')
 summary(complete_data$valentinesday)
 table(complete_data$valentinesday)
 
-# Assumptions (outliers)
+# Assumptions (normality and outliers)
+set.seed(0)
+complete_data_sample <- rnorm(4999)
+shapiro.test(complete_data_sample)
+
 ggboxplot(complete_data, x="valentinesday", y="price",
           color="valentinesday", palette = c("#00AFBB", "#E7B800"),
           ylab= "Price", xlab="Valentinesday")
