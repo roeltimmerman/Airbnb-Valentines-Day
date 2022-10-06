@@ -1,9 +1,11 @@
-OUTPUT = ../../gen/output
+OUTPUT = ../../gen/analysis/output
 
-all: $(OUTPUT)/t_test_report.html $(OUTPUT)/glm_model_report.html
+all: $(OUTPUT)/analysis_report_1.html $(OUTPUT)/analysis_report_2.html $(OUTPUT)/analysis_report_3.html
 
-$(OUTPUT)/t_test_report.html: t_test_analysis.R
+$(OUTPUT)/analysis_report_1.html: analysis_1.R
 	R --vanilla < t_test_analysis.R
 
-$(OUTPUT)/glm_model_report.html:glm_analysis.R
+$(OUTPUT)/analysis_report_2.html: analysis_2.R
 	R --vanilla glm_analysis.R
+	
+$(OUTPUT)/analysis_report_3.html: analysis_3.R
