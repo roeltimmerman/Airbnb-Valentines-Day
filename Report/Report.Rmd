@@ -1,0 +1,45 @@
+---
+title: "How far can you go for love on Airbnb? - The effect of Valentine's Day on
+  Airbnb listings"
+author: "Anouk Bor, Eva Bos, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
+date: "2022-10-04"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(readr)
+```
+
+
+# Introduction
+For this study data from InsideAirbnb is used. To conduct our analysis of the effect of Valentine's day on Airbnb listings we extracted listing data from three European cities. Namely Rome, Paris and Madrid. After extracting the datasets per city they have been cleaned. Redundant columns are removed and new variables regarding the analysis are created. Finally the datasets of the seperate cities are merged into one complete dataset. 
+The descriptions of all variables used are stated below, including the summary statistics.
+Furthermore there are also plots included in the report that are generated regarding important variables from the analysis.
+The main part of the report contains the analysis. --- more info ---
+Finally the results of the study will be briefly discussed.
+
+## Variable Descriptives
+```{r}
+
+```
+
+
+## Graphs
+```{r}
+
+```
+
+## Analysis
+```{r}
+
+```
+
+## Results
