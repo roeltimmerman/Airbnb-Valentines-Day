@@ -17,8 +17,8 @@ table(complete_data$booked)
 hist(complete_data$booked, xlab = 'booked')
 
 # Assumptions (normality)
-set.seed(0)
-complete_data_sample <- rnorm(4999)
+set.seed(5000)
+complete_data_sample <- rnorm(5000)
 shapiro.test(complete_data_sample)
 
 # Total bookings 
