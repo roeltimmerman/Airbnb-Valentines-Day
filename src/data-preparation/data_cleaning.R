@@ -188,4 +188,5 @@ complete_data <- bind_rows(madrid_data, paris_data, rome_data)
 complete_data
 
 #Ouput -> write dataset to csv file
-write.csv(complete_data, "../../gen/data-preparation/temp/complete_data.csv")
+write.csv(complete_data, "../../gen/temp/complete_data.csv")
+
