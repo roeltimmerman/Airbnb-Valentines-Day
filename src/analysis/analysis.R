@@ -1,20 +1,21 @@
-### ANALYSIS ### 
+#### Analysis 1 t-test for price and valentinesday 
 ## Library 
 library(ggplot2)
 library(tidyverse)
+library(ggpubr)
 
 ## Input ##
 complete_data <- read.csv("../../gen/temp/complete_data.csv") 
 
-## T.TEST FOR PRICE AND VALENTINESDAY ## 
-# Assumptions for T-test #
-# Outliers-> no outliers in boxplot.
-# Normality no necessary as there are no outliers and sample size>25 per group 
-# (https://eje.bioscientifica.com/view/journals/eje/182/2/EJE-19-0922.xml) -> dit in markdown file zetten? 
+# Data transformation for analysis 1 
+complete_data$price <- as.numeric(as.factor(complete_data$price)) 
+
+# Assumptions (outliers)
+ggboxplot(complete_data, x="valentinesday", y="price",
+          color="valentinesday", palette = c("#00AFBB", "#E7B800"),
+          ylab= "Price", xlab="Valentinesday")
 
 # Price in total 
-# --> not significant 
-complete_data$price <- as.numeric(as.factor(complete_data$price)) 
 t_test_price <- t.test(price ~ valentinesday, complete_data) 
 t_test_price 
 
@@ -28,38 +29,8 @@ hist(complete_data$price, xlab = 'price')
 # Price per city # 
 lapply(split(complete_data, factor(complete_data$city)), function(x)t.test(data=x, price ~ valentinesday, paired=FALSE))
 
-
 # Plot for different cities 
 ggplot(complete_data, aes(x=valentinesday, y=price, fill=city)) + 
     geom_boxplot() +
     facet_wrap(~valentinesday, scale="free")
-
-## LOGISTIC REGRESSION FOR BOOKINGS AND VALENTINESDAY ## 
-# Assumptions logistic regression 
-#Outliers -> no outliers in the boxplot -> KLOPT NOG NIET HELEMAAL 
-ggplot(complete_data, aes(x=valentinesday, y=booked, fill=city)) +
-    geom_boxplot() +
-    facet_wrap(~valentinesday, scale="free") 
-
-# Bookings in total # 
-glm1 <- glm(booked ~ valentinesday, complete_data, family = binomial) 
-exp(glm1$coefficients)
-hist(complete_data$booked, xlab = 'booked') 
-
-#Model fit of total bookings 
-glm1_chisq <- glm1$null.deviance-glm1$deviance 
-glm1_chisqdf <- glm1$df.null-glm1$df.residual 
-1-pchisq(glm1_chisq,glm1_chisqdf) 
-
-# Bookings per city # 
-glm1_per_city <- lapply(split(complete_data, factor(complete_data$city)), function(x)glm(data=x, booked ~ valentinesday))
-glm1_per_city
-exp(glm1_per_city$coefficents)
-
-
-
-
-
-
-
 
