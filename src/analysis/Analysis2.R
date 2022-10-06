@@ -2,14 +2,13 @@
 ### Library
 library(tidyverse)
 library(ggplot2)
+library(ggpubr)
 
 ## Input 
 complete_data <- read.csv("../../gen/temp/complete_data.csv") 
 
 # Assumptions (outliers)
-ggplot(complete_data, aes(x=valentinesday, y=booked, fill=city)) +
-    geom_boxplot() +
-    facet_wrap(~valentinesday, scale="free") 
+
 
 # Total bookings 
 glm1 <- glm(booked ~ valentinesday, complete_data, family = binomial) 
