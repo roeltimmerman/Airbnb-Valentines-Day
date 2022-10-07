@@ -37,10 +37,6 @@ price_valentinesday_boxplot
 t_test_price <- t.test(price ~ valentinesday, complete_data) 
 t_test_price 
 
-# Histogram price division
-histogram_prices <- hist(complete_data$price, xlab = 'price in €') 
-histogram_prices
-
 # Price per city # 
 lapply(split(complete_data, factor(complete_data$city)), function(x)t.test(data=x, price ~ valentinesday, paired=FALSE))
 
@@ -53,10 +49,8 @@ boxplot_price_per_city <- ggplot(complete_data, aes(x=valentinesday, y=price, fi
 boxplot_price_per_city
 
 ## Output ##
-valentinesday_yes_no
-price_valentinesday_boxplot
-histogram_prices
-boxplot_price_per_city
-
-write.csv(valentinesday_yes_no, '../../gen/analysis/output/valentinesday_yes_no')
-
+write.csv(valentinesday_yes_no, '../../gen/analysis/output/valentinesday_yes_no.csv')
+ggsave(plot = price_valentinesday_boxplot, filename = "../../gen/analysis/output/price_valentinesday_boxplot.pdf")
+pdf(file="../../gen/analysis/output/histogram_prices.pdf")
+dev.off()
+ggsave(plot = boxplot_price_per_city, filename = "../../gen/analysis/output/boxplot_price_per_city.pdf")

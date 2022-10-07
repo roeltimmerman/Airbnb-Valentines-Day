@@ -4,14 +4,11 @@ library(tidyverse)
 library(ggplot2)
 library(ggpubr)
 
-## Input 
+
+## Input ##
 complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
 
 # Descriptives
-summary(complete_data$price)
-table(complete_data$price)
-histogram_prices <- hist(complete_data$price, xlab = 'price') 
-
 summary(complete_data$booked)
 table(complete_data$booked)
 histogram_booked <- hist(complete_data$booked, xlab = 'booked')
@@ -41,11 +38,10 @@ exp(x$coefficients))
 
 
 # Output 
-histogram_prices
-histogram_booked
-histogram_total_bookings
-
-write.csv()
+pdf(file="../../gen/analysis/output/histogram_booked.pdf")
+dev.off()
+pdf(file="../../gen/analysis/output/histogram_total_bookings.pdf")
+dev.off()
 
 
 
