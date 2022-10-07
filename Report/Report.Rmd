@@ -2,10 +2,10 @@
 title: "How far can you go for love on Airbnb? - The effect of Valentine's Day on
   Airbnb listings"
 author: "Anouk Bor, Eva Bos, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
-date: "2022-10-04"
+date: "2022-10-07"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -16,6 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(ggplot2)
 library(readr)
+library(tidyverse)
 ```
 
 
@@ -27,8 +28,27 @@ The main part of the report contains the analysis. --- more info ---
 Finally the results of the study will be briefly discussed.
 
 ## Variable Descriptives
+### Analysis 1
 ```{r}
-
+#Analysis 1 
+valentinesday_yes_no <- read.csv("../../gen/analysis/output/valentinesday_yes_no.csv")
+valentinesday_yes_no
+```
+```{r echo=TRUE}
+knitr::include_graphics('../../gen/analysis/output/price_valentinesday_boxplot.pdf')
+```
+### Boxplot price valentines day prices vs non valentines day price per city
+```{r}
+knitr::include_graphics('../../gen/analysis/output/boxplot_price_per_city.pdf')
+```
+### Histogram of prices --> meer uitleg/betere naam
+```{r}
+knitr::include_graphics('../../gen/analysis/output/histogram_prices.pdf')
+```
+### Analysis 2
+```{r}
+knitr::include_graphics('../../gen/analysis/output/histogram_booked.pdf')
+knitr::include_graphics('../../gen/analysis/output/histogram_total_bookings.pdf')
 ```
 
 
