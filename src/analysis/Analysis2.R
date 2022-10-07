@@ -1,11 +1,11 @@
-#### Analysis 2 Logistic regression for bookings and valentinesday 
+#### Analysis 2 - Logistic regression for bookings and valentinesday 
 ### Library
 library(tidyverse)
 library(ggplot2)
 library(ggpubr)
 
 ## Input 
-complete_data <- read.csv("../../gen/temp/complete_data.csv") 
+complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
 
 # Descriptives
 summary(complete_data$price)

@@ -1,4 +1,4 @@
-#### Analysis 1 t-test for price and valentinesday 
+#### Analysis 1 - t-test for price and valentinesday 
 ## Library 
 library(ggplot2)
 library(tidyverse)
@@ -8,7 +8,7 @@ library(ggpubr)
 dir.create('../../gen/analysis/output', recursive = T)
 
 ## Input ##
-complete_data <- read.csv("../../gen/temp/complete_data.csv") 
+complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
 
 # Data transformation for analysis 1 
 complete_data$price <- as.numeric(as.factor(complete_data$price)) 
