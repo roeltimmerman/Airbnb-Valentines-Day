@@ -46,6 +46,8 @@ knitr::include_graphics('../../gen/analysis/output/boxplot_price_per_city.pdf')
 knitr::include_graphics('../../gen/analysis/output/histogram_prices.pdf')
 ```
 ### Analysis 2
+The variable book consists of two categories; not booked (0) and booked (1), by looking at the mean (M=0.6978) in the data set we can conclude that airbnb's are more booked that not booked in the chosen time period. This conclusion can be verified by printing out the table and the histogram for the variable booked. On valentines day 53657 airbnb's were booked according to the data for the cities Rome, Madrid and Paris. If we compare this with a random date in February, we see that there is a small difference between both dates. Interesting is to see that on valentines day 53657 airbnb's are booked compared to the random generated date were 53826 airbnb's were booked. We can conclude that on valentines day there are no more airbnb's booked in Rome, Madrid and Paris than on other random generated date. 
+
 ```{r}
 knitr::include_graphics('../../gen/analysis/output/histogram_booked.pdf')
 knitr::include_graphics('../../gen/analysis/output/histogram_total_bookings.pdf')
