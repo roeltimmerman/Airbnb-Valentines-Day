@@ -8,6 +8,9 @@ library(ggpubr)
 ## Input ##
 complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
 
+# Data transformation for analysis 1 
+complete_data$price <- as.numeric(as.factor(complete_data$price)) 
+
 # Descriptives
 summary(complete_data$booked)
 table(complete_data$booked)
