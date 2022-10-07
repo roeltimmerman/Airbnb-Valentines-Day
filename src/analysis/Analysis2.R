@@ -4,11 +4,8 @@ library(tidyverse)
 library(ggplot2)
 library(ggpubr)
 
-<<<<<<< HEAD
+
 ## Input ##
-=======
-## Input 
->>>>>>> ec96e30affaa8efe43a68ebda51cdb705cdffa73
 complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
 
 # Descriptives

@@ -5,7 +5,7 @@ library(tidyverse)
 library(ggpubr)
 
 # Create directory #
-dir.create('../../gen/data-preparation/analysis/output', recursive = T)
+dir.create('../../gen/analysis/output', recursive = T)
 
 ## Input ##
 complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
