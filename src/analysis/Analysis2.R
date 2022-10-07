@@ -8,13 +8,17 @@ library(ggpubr)
 ## Input ##
 complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
 
-# Data transformation for analysis 1 
+# Data transformation for analysis 2 
 complete_data$price <- as.numeric(as.factor(complete_data$price)) 
 
 # Descriptives
 summary(complete_data$booked)
 table(complete_data$booked)
 histogram_booked <- hist(complete_data$booked, xlab = 'booked')
+
+table(complete_data$date == "2022-02-14")
+set.seed(1)
+sample(complete_data$date, 1)
 
 # Assumptions (normality)
 set.seed(5000)
