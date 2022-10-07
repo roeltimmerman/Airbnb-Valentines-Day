@@ -72,7 +72,6 @@ rome_data$city <- "Rome"
 
 #add number of listings variable#
 rome_data$n_listings <- nrow(list_rom)
-
 summary(rome_data)
 
 ### MADRID ###
@@ -122,13 +121,7 @@ madrid_data$city <- "Madrid"
 
 #add number of listings variable#
 madrid_data$n_listings <- nrow(list_mad)
-
 summary(madrid_data)
-
-
-#extra om te vergelijken voor onszelf of valentines day in verhouding meer booked is#
-madrid_data_grouped <- madrid_data %>% group_by(valentinesday) %>% summarise(bookedsum = sum(booked))
-madrid_data_grouped
 
 ### PARIS ###
 #Transformation
@@ -181,12 +174,18 @@ paris_data$n_listings <- nrow(list_par)
 
 summary(paris_data)
 
+<<<<<<< HEAD
 ### Add City size moderator to each city dataset? or use #listings for city size moderator#
 
 ### MERGE THE FILES TO 1 & REMOVE MISSINGS ###
 complete_data_withNA <- bind_rows(madrid_data, paris_data, rome_data)
 
 complete_data <- na.omit(complete_data)
+=======
+### MERGE THE FILES TO 1 ###
+complete_data <- bind_rows(madrid_data, paris_data, rome_data)
+complete_data
+>>>>>>> cf3aea5c6013a8113765277b49ad0235bd1bc2fb
 
 #Ouput -> write dataset to csv file
 write.csv(complete_data, "../../gen/data-preparation/temp/complete_data.csv")
