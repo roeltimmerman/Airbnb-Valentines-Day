@@ -4,8 +4,8 @@ title: "How far can you go for love on Airbnb? - The effect of Valentine's Day o
 author: "Anouk Bor, Eva Bos, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
 date: "2022-10-07"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -46,11 +46,23 @@ knitr::include_graphics('../../gen/analysis/output/boxplot_price_per_city.pdf')
 knitr::include_graphics('../../gen/analysis/output/histogram_prices.pdf')
 ```
 ### Analysis 2
-The variable book consists of two categories; not booked (0) and booked (1), by looking at the mean (M=0.6978) in the data set we can conclude that airbnb's are more booked that not booked in the chosen time period. This conclusion can be verified by printing out the table and the histogram for the variable booked. On valentines day 53657 airbnb's were booked according to the data for the cities Rome, Madrid and Paris. If we compare this with a random date in February, we see that there is a small difference between both dates. Interesting is to see that on valentines day 53657 airbnb's are booked compared to the random generated date were 53826 airbnb's were booked. We can conclude that on valentines day there are no more airbnb's booked in Rome, Madrid and Paris than on other random generated date. 
+The variable book consists of two categories; not booked (0) and booked (1), by looking at the mean (M=0.6978) in the data set we can conclude that airbnb's are more booked that not booked in the chosen time period  of this dataset. This conclusion can be verified by printing out the table and the histogram for the variable booked. On valentines day 53657 airbnb's were booked according to the data for the cities Rome, Madrid and Paris. If we compare this with a random date in February, we see that there is a small difference between both dates. Interesting is to see that on valentines day 53657 airbnb's are booked compared to the random generated date were 53826 airbnb's booked. We can conclude that on valentines day there are no more airbnb's booked in Rome, Madrid and Paris than on other random generated date. 
 
 ```{r}
 knitr::include_graphics('../../gen/analysis/output/histogram_booked.pdf')
 knitr::include_graphics('../../gen/analysis/output/histogram_total_bookings.pdf')
+```
+
+## Assumptions check 
+### Analysis 1
+```{r}
+
+```
+
+### Analysis 2
+Before the logistic regression can be performed, we need to check for normality. A Shapiro-Wilk test is used to see if the data is normally distributed. The data set is too big for a the normality test and therefore a random sample is of 5000 is generated. The data is normally distributed because p = 0.0955 > 0.05, which means a logistic regression can be performed.  
+```{r}
+
 ```
 
 
