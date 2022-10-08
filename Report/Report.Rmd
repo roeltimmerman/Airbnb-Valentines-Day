@@ -80,6 +80,12 @@ Before the logistic regression can be performed, we need to check for normality.
 
 ```
 
+## Analysis
+### Analysis 1
+### Analysis 2 --> SIGNIFICANT PVALUE STAAT NIET IN DE TEST? 
+First we look at a logistic regression for all cities combined. Looking at the exponents of the logistic regression we can conclude that if airbnb's change from non booked to booked the value of valentinesday will change with 1.025085.If we look at the exponents per city of the logistic regression we see that there are small differences per city. If airbnb's are booked Madrid will go up by a value of 0.9961, Rome by a value of 1.005468 and Paris by a value of 1.006446. From the exponents we can conclude that Madrid has the smallest change in value and Paris the biggest if the airbnb's in the data set go from non booked to booked. Lastly a model fit is performed with a log likelihood ratio test in order to test if the model is significant and see if H0 can be rejected. H0 test if all coefficients are zero. The log likelihood ratio test gives us a value of 0.009886. 0.009885 < 0.05 and therefore significant and H0 can be rejected. 
+
+### Analysis 3
 
 ## Graphs
 ```{r}
