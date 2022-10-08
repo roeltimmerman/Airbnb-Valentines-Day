@@ -15,7 +15,15 @@ complete_data_booked$beds_dummy <- ifelse(complete_data$beds <= 2, 1, 0)
 summary(complete_data_booked$beds_dummy)
 data_beds <- table(complete_data_booked$valentinesday, complete_data_booked$beds_dummy)
 data_beds
-## HIER MOET NOG DE BARPLOT 
+
+histogram_beds <- hist(complete_data_booked$beds, xlab = 'number of beds')
+
+beds_booked_valentinesday <- ggboxplot(complete_data_booked, 
+                                       x="valentinesday", y="beds", 
+                                       color="valentinesday", palette = c("#00AFBB", "#E7B800"), 
+                                       ylab= "Beds", xlab="Valentinesday")
+beds_booked_valentinesday
+
 
 # Assumptions (normality)
 set.seed(5000)
