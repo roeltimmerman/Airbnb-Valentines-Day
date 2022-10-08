@@ -8,9 +8,6 @@ library(ggpubr)
 ## Input ##
 complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
 
-# Data transformation for analysis 2 
-complete_data$price <- as.numeric(as.factor(complete_data$price)) 
-
 # Descriptives
 summary(complete_data$booked)
 table(complete_data$booked)
@@ -19,6 +16,7 @@ histogram_booked <- hist(complete_data$booked, xlab = 'booked')
 table(complete_data$date == "2022-02-14")
 set.seed(1)
 sample(complete_data$date, 1)
+table(complete_data$date == "2022-02-09")
 
 # Assumptions (normality)
 set.seed(5000)
@@ -27,6 +25,7 @@ shapiro.test(complete_data_sample)
 
 # Total bookings 
 glm1 <- glm(booked ~ valentinesday, complete_data, family = binomial) 
+glm1
 exp(glm1$coefficients)
 histogram_total_bookings <- hist(complete_data$booked, xlab = 'booked') 
 
@@ -38,8 +37,6 @@ glm1_chisqdf <- glm1$df.null-glm1$df.residual
 # Bookings per city 
 glm1_per_city <- lapply(split(complete_data, factor(complete_data$city)), function(x)glm(data=x, booked ~ valentinesday))
 glm1_per_city
-exp(glm1_per_city$coefficents)
-
 lapply(glm1_per_city, function(x) 
 exp(x$coefficients))
 
