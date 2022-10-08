@@ -4,8 +4,8 @@ title: "How far can you go for love on Airbnb? - The effect of Valentine's Day o
 author: "Anouk Bor, Eva Bos, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
 date: "2022-10-07"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -21,32 +21,46 @@ library(tidyverse)
 
 
 # Introduction
-For this study data from InsideAirbnb is used. To conduct our analysis of the effect of Valentine's day on Airbnb listings we extracted listing data from three European cities. Namely Rome, Paris and Madrid. After extracting the datasets per city they have been cleaned. Redundant columns are removed and new variables regarding the analysis are created. Finally the datasets of the seperate cities are merged into one complete dataset. 
-The descriptions of all variables used are stated below, including the summary statistics.
-Furthermore there are also plots included in the report that are generated regarding important variables from the analysis.
+For this study data from InsideAirbnb is used. To conduct our analysis of the effect of Valentine's day on Airbnb listings we extracted listing data from three European cities which we assumed to be popular during Valentines Day, namely Rome, Paris and Madrid. After extracting the datasets per city they have been cleaned. Redundant columns are removed and new variables regarding the analysis are added. After this, the datasets of the seperate cities are merged into one complete dataset.
+A description of all variables used in the analysis including relevant summary statistics can be found in this report.
+Furthermore, a variety of plots are included in the report that visualize important variables from the analysis.
 The main part of the report contains the analysis. --- more info ---
-Finally the results of the study will be briefly discussed.
+Finally the results, and a conclusion of our study will be briefly discussed.
 
 ## Variable Descriptives
 ### Analysis 1
-```{r}
-#Analysis 1 
-valentinesday_yes_no <- read.csv("../../gen/analysis/output/valentinesday_yes_no.csv")
-valentinesday_yes_no
-```
-```{r echo=TRUE}
-knitr::include_graphics('../../gen/analysis/output/price_valentinesday_boxplot.pdf')
-```
-### Boxplot price valentines day prices vs non valentines day price per city
-```{r}
-knitr::include_graphics('../../gen/analysis/output/boxplot_price_per_city.pdf')
-```
-### Histogram of prices --> meer uitleg/betere naam
+The first analysis of this study will answer the question: "What is the effect of Valentine's Day on the price of Airbnb listings?"
+
+The variables used in this analysis are a metric variable 'price' and a dummy variable 'valentinesday', which takes the value of 0 if the booking date is not Valentines Day, and 1 if the date is Valentines Day. Below is a histogram presented of the frequencies per total price of a listing.
+
 ```{r}
 knitr::include_graphics('../../gen/analysis/output/histogram_prices.pdf')
 ```
+
+The mean price of an Airbnb listing of the complete data is €313,40. 
+
+Summary statistics of the 'valentinesday' dummy variable:
+```{r}
+valentinesday_yes_no <- read.csv("../../gen/analysis/output/valentinesday_yes_no.csv")
+valentinesday_yes_no
+```
+
+The mean of the 'valentinesday' dummy variable is 0.03586. There are 29804 bookings captured on Valentines Day, and 801227 when it is no Valentines Day. This means that the number of observations on Valentines Day is approximately 3.7%.
+
+### Boxplot price valentines day price vs non valentines day price total
+```{r echo=TRUE}
+knitr::include_graphics('../../gen/analysis/output/price_valentinesday_boxplot.pdf')
+```
+### Boxplot price valentines day price vs non valentines day price per city
+```{r}
+knitr::include_graphics('../../gen/analysis/output/boxplot_price_per_city.pdf')
+```
+
+The t-test of the price per listing of all cities captured is not statistically significant (p = 0.89 > p = 0.05). Additionally, t-test results for the different cities Madrid (p = 0.9311), Paris (p = 0.9615) and Rome (p = 0.966) are all > p = 0.05, which means that no significance is found in any of the results of the t-test.
+
+
 ### Analysis 2
-The variable book consists of two categories; not booked (0) and booked (1), by looking at the mean (M=0.6978) in the data set we can conclude that airbnb's are more booked that not booked in the chosen time period  of this dataset. This conclusion can be verified by printing out the table and the histogram for the variable booked. On valentines day 53657 airbnb's were booked according to the data for the cities Rome, Madrid and Paris. If we compare this with a random date in February, we see that there is a small difference between both dates. Interesting is to see that on valentines day 53657 airbnb's are booked compared to the random generated date were 53826 airbnb's booked. We can conclude that on valentines day there are no more airbnb's booked in Rome, Madrid and Paris than on other random generated date. 
+The variable book consists of two categories; not booked (0) and booked (1), by looking at the mean (M=0.6978) in the data set we can conclude that Airbnb's are more booked that not booked in the chosen time period  of this dataset. This conclusion can be verified by printing out the table and the histogram for the variable booked. On valentines day 53657 Airbnb's were booked according to the data for the cities Rome, Madrid and Paris. If we compare this with a random date in February, we see that there is a small difference between both dates. Interesting is to see that on valentines day 53657 Airbnb's are booked compared to the random generated date were 53826 Airbnb's booked. We can conclude that on Valentines Day there are no more Airbnb's booked in Rome, Madrid and Paris than on other random generated date. 
 
 ```{r}
 knitr::include_graphics('../../gen/analysis/output/histogram_booked.pdf')
@@ -55,12 +69,13 @@ knitr::include_graphics('../../gen/analysis/output/histogram_total_bookings.pdf'
 
 ## Assumptions check 
 ### Analysis 1
+Before conducting the t-test for the first analysis, the normality assumptions has to be checked. To check for normality of the sample, a Shapiro-Wilk test was performed on a random sample of 5000, because the total data set was too large to perform a normality test. The outcome of the test is p = 0.0956 > 0.05, which means that the complete_data of the study is normally distributed and that the t-test can be conducted.
 ```{r}
 
 ```
 
 ### Analysis 2
-Before the logistic regression can be performed, we need to check for normality. A Shapiro-Wilk test is used to see if the data is normally distributed. The data set is too big for a the normality test and therefore a random sample is of 5000 is generated. The data is normally distributed because p = 0.0955 > 0.05, which means a logistic regression can be performed.  
+Before the logistic regression can be performed, we need to check for normality. A Shapiro-Wilk test is used to see if the data is normally distributed. The data set is too big for a the normality test and therefore a random sample is of 5000 is generated. The data is normally distributed because p = 0.0956 > 0.05, which means a logistic regression can be performed.  
 ```{r}
 
 ```
@@ -77,3 +92,5 @@ Before the logistic regression can be performed, we need to check for normality.
 ```
 
 ## Results
+
+Looking at the first analysis, we can conclude that there is no statistically significant finding about the influence of Valentines Day on the price of Airbnb listings. Therefore, we can not make any conclusions about the influence of Valentines Day on the price of listings in Madrid, Paris and Rome.
