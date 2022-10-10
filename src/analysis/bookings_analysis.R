@@ -1,4 +1,6 @@
-#### Analysis 2 - Logistic regression for bookings and valentinesday 
+########################
+### BOOKINGS ANALYSIS ###
+########################
 
 # Library #
 library(tidyverse)
