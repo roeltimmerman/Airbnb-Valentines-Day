@@ -9,7 +9,7 @@ complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv")
 # Data transformation for analysis 3
 complete_data_booked <- complete_data %>% 
     filter(complete_data$booked == 1)
-complete_data_booked$beds_dummy <- ifelse(complete_data$beds <= 2, 1, 0)
+complete_data_booked$beds_dummy <- ifelse(complete_data_booked$beds <= 2, 1, 0)
 
 # Descriptive statistics
 summary(complete_data_booked$beds_dummy)
@@ -49,10 +49,10 @@ exp(x$coefficients))
 
 ## Output ##
 write.csv(data_beds,filename = "../../gen/analysis/output/beds_booked.csv", row.names = FALSE)
-ggsave(plot = ..., filename = "../../gen/analysis/output/histogram_beds.pdf")
+pdf(file="../../gen/analysis/output/histogram_beds.pdf")
 dev.off()
-ggsave(plot = ..., filename = "../../gen/analysis/output/beds_booked_valentinesday.pdf")
-dev.off()
+ggsave(plot = beds_booked_valentinesday, filename = "../../gen/analysis/output/beds_booked_valentinesday.pdf")
+
 
 
 
