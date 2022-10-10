@@ -1,14 +1,14 @@
 #### Analysis 2 - Logistic regression for bookings and valentinesday 
-### Library
+
+# Library #
 library(tidyverse)
 library(ggplot2)
 library(ggpubr)
 
-
-## Input ##
+## INPUT ##
 complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
 
-# Descriptives
+## TRANSFORMATION ##
 summary(complete_data$booked)
 table(complete_data$booked)
 histogram_booked <- hist(complete_data$booked, xlab = 'booked')
@@ -18,7 +18,7 @@ set.seed(1)
 sample(complete_data$date, 1)
 table(complete_data$date == "2022-02-09")
 
-# Assumptions (normality)
+# Assumption: normality 
 set.seed(5000)
 complete_data_sample <- rnorm(5000)
 shapiro.test(complete_data_sample)
@@ -40,8 +40,7 @@ glm1_per_city
 lapply(glm1_per_city, function(x) 
 exp(x$coefficients))
 
-
-# Output 
+## OUTPUT ##
 pdf(file="../../gen/analysis/output/histogram_booked.pdf")
 dev.off()
 pdf(file="../../gen/analysis/output/histogram_total_bookings.pdf")
