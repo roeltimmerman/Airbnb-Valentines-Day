@@ -1,8 +1,8 @@
 TEMP = ../../gen/data-preparation/temp
 ANALYSIS = ../../gen/analysis/output
-REPORT = ../../src/report
+REPORT = ../../src/analysis/report
 
-all: $(ANALYSIS)/price_valentinesday_boxplot.pdf $(ANALYSIS)/histogram_prices.pdf $(ANALYSIS)/boxplot_price_per_city.pdf $(ANALYSIS)/histogram_booked.pdf $(ANALYSIS)/histogram_total_bookings.pdf $(ANALYSIS)/histogram_beds.pdf $(ANALYSIS)/beds_booked_valentinesday.pdf $(REPORT)/report.Rmd
+all: $(ANALYSIS)/price_valentinesday_boxplot.pdf $(ANALYSIS)/histogram_prices.pdf $(ANALYSIS)/boxplot_price_per_city.pdf $(ANALYSIS)/histogram_booked.pdf $(ANALYSIS)/histogram_total_bookings.pdf $(ANALYSIS)/histogram_beds.pdf $(ANALYSIS)/beds_booked_valentinesday.pdf $(REPORT)/report.html
 
 $(ANALYSIS)/price_valentinesday_boxplot.pdf $(ANALYSIS)/histogram_prices.pdf $(ANALYSIS)/boxplot_price_per_city.pdf: $(TEMP)/complete_data.csv
 	R --vanilla < price_analysis.R
@@ -19,5 +19,5 @@ $(ANALYSIS)/histogram_beds.pdf $(ANALYSIS)/beds_booked_valentinesday.pdf: $(TEMP
 	
 # output analysis nog toevoegen
 
-$(REPORT)/report.Rmd: $(ANALYSIS)/price_valentinesday_boxplot.pdf $(ANALYSIS)/histogram_prices.pdf $(ANALYSIS)/boxplot_price_per_city.pdf $(ANALYSIS)/histogram_booked.pdf $(ANALYSIS)/histogram_total_bookings.pdf $(ANALYSIS)/histogram_beds.pdf $(ANALYSIS)/beds_booked_valentinesday.pdf
-	Rscript –e "rmarkdown::render(“report.Rmd”)"
+$(REPORT)/report.html: $(ANALYSIS)/price_valentinesday_boxplot.pdf $(ANALYSIS)/histogram_prices.pdf $(ANALYSIS)/boxplot_price_per_city.pdf $(ANALYSIS)/histogram_booked.pdf $(ANALYSIS)/histogram_total_bookings.pdf $(ANALYSIS)/histogram_beds.pdf $(ANALYSIS)/beds_booked_valentinesday.pdf
+	Rscript -e 'rmarkdown::render("report.Rmd")'
