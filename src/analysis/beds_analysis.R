@@ -49,7 +49,7 @@ lapply(glm2_per_city, function(x)
 exp(x$coefficients))
 
 ## Output ##
-write.csv(data_beds,filename = "../../gen/analysis/output/beds_booked.csv", row.names = FALSE)
+#write.csv(data_beds,filename = "../../gen/analysis/output/beds_booked.csv", row.names = FALSE)
 pdf(file="../../gen/analysis/output/histogram_beds.pdf")
 dev.off()
 ggsave(plot = beds_booked_valentinesday, filename = "../../gen/analysis/output/beds_booked_valentinesday.pdf")

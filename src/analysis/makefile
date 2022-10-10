@@ -1,11 +1,23 @@
-OUTPUT = ../../gen/analysis/output
+TEMP = ../../gen/data-preparation/temp
+ANALYSIS = ../../gen/analysis/output
+REPORT = ../../src/report
 
-all: $(OUTPUT)/analysis_report_1.html $(OUTPUT)/analysis_report_2.html $(OUTPUT)/analysis_report_3.html
+all: $(ANALYSIS)/price_valentinesday_boxplot.pdf $(ANALYSIS)/histogram_prices.pdf $(ANALYSIS)/boxplot_price_per_city.pdf $(ANALYSIS)/histogram_booked.pdf $(ANALYSIS)/histogram_total_bookings.pdf $(ANALYSIS)/histogram_beds.pdf $(ANALYSIS)/beds_booked_valentinesday.pdf $(REPORT)/report.Rmd
 
-$(OUTPUT)/analysis_report_1.html: analysis_1.R
-	R --vanilla < t_test_analysis.R
+$(ANALYSIS)/price_valentinesday_boxplot.pdf $(ANALYSIS)/histogram_prices.pdf $(ANALYSIS)/boxplot_price_per_city.pdf: $(TEMP)/complete_data.csv
+	R --vanilla < price_analysis.R
 
-$(OUTPUT)/analysis_report_2.html: analysis_2.R
-	R --vanilla glm_analysis.R
+# output t-test nog toevoegen
+
+$(ANALYSIS)/histogram_booked.pdf $(ANALYSIS)/histogram_total_bookings.pdf: $(TEMP)/complete_data.csv
+	R --vanilla < bookings_analysis.R
 	
-$(OUTPUT)/analysis_report_3.html: analysis_3.R
+# output analysis nog toevoegen
+
+$(ANALYSIS)/histogram_beds.pdf $(ANALYSIS)/beds_booked_valentinesday.pdf: $(TEMP)/complete_data.csv
+	R --vanilla < beds_analysis.R
+	
+# output analysis nog toevoegen
+
+$(REPORT)/report.Rmd: $(ANALYSIS)/price_valentinesday_boxplot.pdf $(ANALYSIS)/histogram_prices.pdf $(ANALYSIS)/boxplot_price_per_city.pdf $(ANALYSIS)/histogram_booked.pdf $(ANALYSIS)/histogram_total_bookings.pdf $(ANALYSIS)/histogram_beds.pdf $(ANALYSIS)/beds_booked_valentinesday.pdf
+	Rscript –e "rmarkdown::render(“report.Rmd”)"
