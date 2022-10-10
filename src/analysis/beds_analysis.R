@@ -49,7 +49,9 @@ exp(x$coefficients))
 
 ## Output ##
 write.csv(data_beds,filename = "../../gen/analysis/output/beds_booked.csv", row.names = FALSE)
-ggsave(plot = ..., filename = "../../gen/analysis/output/beds_valentinesday_barplot.pdf")
+ggsave(plot = ..., filename = "../../gen/analysis/output/histogram_beds.pdf")
+dev.off()
+ggsave(plot = ..., filename = "../../gen/analysis/output/beds_booked_valentinesday.pdf")
 dev.off()
 
 
