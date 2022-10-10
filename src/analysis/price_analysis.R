@@ -14,7 +14,6 @@ library(ggpubr)
 complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
 
 ## TRANSFORMATION ##
-# Data transformation for price analysis #
 complete_data$price <- as.numeric(as.factor(complete_data$price)) 
 
 # Descriptive statistics #
