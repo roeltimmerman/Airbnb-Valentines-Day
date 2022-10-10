@@ -64,19 +64,17 @@ knitr::include_graphics('../../gen/analysis/output/histogram_total_bookings.pdf'
 ```
 
 # Assumptions check 
-## Analysis 1
-Before conducting the t-test for the first analysis, the normality assumptions has to be checked. To check for normality of the sample, a Shapiro-Wilk test was performed on a random sample of 5000, because the total data set was too large to perform a normality test. The outcome of the test is p = 0.0956 > 0.05, which means that the complete_data of the study is normally distributed and that the t-test can be conducted.
-```{r}
+## Price analysis
+Before conducting the t-test for the first analysis, the normality assumptions has to be checked. To check for normality of the sample, a Shapiro-Wilk test was performed on a random sample of 5000, because the total data set was too large to perform a normality test. The outcome of the test is p = 0.0956 > 0.05, which means that the complete_data of the study is normally distributed and that the t-test can be conducted. If we look at the boxplot below, we can also see that there are no extreme outliers and therefore the data can be used to conduct a t-test. 
 
+```{r}
+knitr::include_graphics('../../gen/analysis/output/price_valentinesday_boxplot.pdf')
 ```
 
-## Analysis 2
+## Bookings analysis
 Before the logistic regression can be performed, we need to check for normality. A Shapiro-Wilk test is used to see if the data is normally distributed. The data set is too big for a the normality test and therefore a random sample is of 5000 is generated. The data is normally distributed because p = 0.0956 > 0.05, which means a logistic regression can be performed.  
 
-```{r}
-
-```
-## Analysis 3
+## Bed analysis
 ```{r}
 ```
 
@@ -85,8 +83,6 @@ Before the logistic regression can be performed, we need to check for normality.
 This analysis will answer the following question: "What is the effect of Valentine's Day on the price of Airbnb listings in 'city'?" A t-test will be performed. 
 
 First we look at the t-test per listing of all cities captured. This t-test is not statistically significant (p = 0.89 > p = 0.05). Additionally, t-test results for the different cities Madrid (p = 0.9311), Paris (p = 0.9615) and Rome (p = 0.966) are all > p = 0.05. For all cities the p-value of the t-test is nog significant. Based on those values we can conclude that there is no significance found in any of the results of the t-test and that Valentines' Day has no significant effect on the price of the Airbnb listings in the cities. 
-
-MODEL FIT TOEVOEGEN 
 
 ## Bookings analysis --> SIGNIFICANT PVALUE STAAT NIET IN DE TEST? 
 This analysis will answer the following question: "Is there a significant difference in the number of bookings on Airbnb on Valentine's day? If so, is this difference also greater in a city with a larger population?". An logistic regression will be performed. 
