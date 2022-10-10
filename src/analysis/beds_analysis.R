@@ -2,6 +2,7 @@
 ### Library
 library(tidyverse)
 library(ggplot2)
+library(ggpubr)
 
 ## Input ##
 complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
@@ -28,7 +29,7 @@ beds_booked_valentinesday
 # Assumptions (normality)
 set.seed(5000)
 complete_data_booked_sample <- rnorm(5000)
-shapiro.test(complete_data_sample)
+shapiro.test(complete_data_booked_sample)
 
 # Logistic regression total 
 glm2 <- glm(beds_dummy ~ valentinesday, data = complete_data_booked)
