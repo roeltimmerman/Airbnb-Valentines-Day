@@ -7,7 +7,10 @@ all: $(DATA)/listings-paris.csv.gz $(DATA)/calendar-paris.csv.gz $(DATA)/listing
 $(DATA)/listings-paris.csv.gz $(DATA)/calendar-paris.csv.gz $(DATA)/listings-rome.csv.gz $(DATA)/calendar-rome.csv.gz $(DATA)/listings-madrid.csv.gz $(DATA)/calendar-madrid.csv.gz: download_data.R
 	R --vanilla < download_data.R
 	
-$(TEMP)/complete_data.csv: data_cleaning.R data_transformation.R
+$(TEMP)/complete_data.csv: data_cleaning.R
+	R --vanilla < data cleaning.R
+
+$(TEMP)/complete_data.csv: data_transformation.R
 	R --vanilla < data_transformation.R
 	
 $(EXPLORATION)/data_exploration.html: data_exploration.Rmd
