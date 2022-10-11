@@ -38,6 +38,10 @@ valentinesday_yes_no
 set.seed(5000)
 complete_data_sample <- rnorm(5000)
 shapiro.test(complete_data_sample)
+
+shapiro_test_pvalue <- shapiro.test(complete_data_sample)$p.value
+save(shapiro_test_pvalue, file = 'shapiropvalue.RData')
+
 # Visualization of assumptions
 price_valentinesday_boxplot <- ggboxplot(complete_data, x="valentinesday", y="price",
                                          color="valentinesday", palette = c("#00AFBB", "#E7B800"),
@@ -48,8 +52,18 @@ price_valentinesday_boxplot
 # Price in total 
 t_test_price <- t.test(price ~ valentinesday, complete_data) 
 t_test_price 
+ttest_pvalue <- t_test_price$p.value
+save(ttest_pvalue, file = 'ttestpvalue.RData')
+
 # Price per city 
-lapply(split(complete_data, factor(complete_data$city)), function(x)t.test(data=x, price ~ valentinesday, paired=FALSE))
+price_per_city <- lapply(split(complete_data, factor(complete_data$city)), function(x)t.test(data=x, price ~ valentinesday, paired=FALSE))
+price_per_city
+pvalue_madrid <- price_per_city$Madrid$p.value
+save(pvalue_madrid, file = 'pvaluemardrid.RData')
+pvalue_paris <- price_per_city$Paris$p.value
+save(pvalue_paris, file = 'pvalueparis.RData')
+pvalue_rome <- price_per_city$Rome$p.value
+save(pvalue_rome, file = 'pvaluerome.RData')
 
 # Visualization #
 # Plot for different cities 
