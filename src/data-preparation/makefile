@@ -12,5 +12,3 @@ $(TEMP)/complete_data.csv: data_cleaning.R
 	
 $(EXPLORATION)/data_exploration.html: data_exploration.Rmd
 	Rscript -e 'rmarkdown::render("data_exploration.Rmd")'
-	
-#$(DATA)/listings-paris.csv.gz $(DATA)/calendar-paris.csv.gz $(DATA)/listings-rome.csv.gz
