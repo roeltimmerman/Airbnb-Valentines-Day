@@ -60,9 +60,6 @@ Moderator: city (size)
 ## Running instructions
 
 
-## More resources
-
-
 ## About
 
 This research project is part of the [Data Preparation and Workflow Management (dPrep)](https://dprep.hannesdatta.com/) course at Tilburg University and is conducted by Team 12. The contributors of the research are: [Anouk Bor](https://github.com/AnoukBor), [Eva Bos](https://github.com/EvaBos), [Bi Xuan Guo](https://github.com/bixuanguo), [Mandana Khabbazi](https://github.com/Mandanakhabbazi), [Indi Wieggers](https://github.com/indiwieggers123).
