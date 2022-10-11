@@ -19,11 +19,18 @@ complete_data$price <- as.numeric(as.factor(complete_data$price))
 # Descriptive statistics #
 # Descriptives price
 summary(complete_data$price)
+mean_price <- mean(complete_data$price)
+save(mean_price, file = 'meanprice.RData')
+
 table(complete_data$price)
 histogram_prices <- hist(complete_data$price, xlab = 'price in €') 
 histogram_prices
+
 # Descriptives Vday
 summary(complete_data$valentinesday)
+mean_valentinesday <- mean(complete_data$valentinesday)
+save(mean_valentinesday, file = 'meanvalentinesday.RData')
+
 valentinesday_yes_no <- table(complete_data$valentinesday)
 valentinesday_yes_no
 
