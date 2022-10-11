@@ -150,8 +150,8 @@ complete_data_withNA <- bind_rows(madrid_data, paris_data, rome_data)
 complete_data_withNA
 
 # Remove missings #
-complete_data <- na.omit(complete_data_withNA)
+complete_data_before_trans <- na.omit(complete_data_withNA)
 
 ## OUTPUT ## 
-write.csv(complete_data, "../../gen/data-preparation/temp/complete_data.csv")
+write.csv(complete_data_before_trans, "../../gen/data-preparation/temp/complete_data_before_trans.csv")
 
