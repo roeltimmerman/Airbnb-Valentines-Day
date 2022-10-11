@@ -65,7 +65,7 @@ boxplot_price_per_city <- ggplot(complete_data, aes(x=valentinesday, y=price, fi
           axis.ticks.x=element_blank())
 
 ## OUTPUT ##
-#write.csv(valentinesday_yes_no, '../../gen/analysis/output/valentinesday_yes_no.csv')
+write.csv(valentinesday_yes_no, '../../gen/analysis/output/valentinesday_yes_no.csv')
 ggsave(plot = price_valentinesday_boxplot, filename = "../../gen/analysis/output/price_valentinesday_boxplot.pdf")
 pdf(file="../../gen/analysis/output/histogram_prices.pdf")
 dev.off()
