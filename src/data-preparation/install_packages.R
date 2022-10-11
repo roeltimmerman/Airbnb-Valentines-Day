@@ -1,4 +1,6 @@
-# DOWNLOAD PACKAGES #
+######################
+## INSTALL PACKAGES ##
+######################
 
 install.packages('tidyverse')
 install.packages('dplyr')

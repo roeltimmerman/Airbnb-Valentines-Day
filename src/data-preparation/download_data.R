@@ -2,12 +2,13 @@
 ## DOWNLOAD DATA ##
 ###################
 
+# Create data directory #
 dir.create('../../data')
 
-#to avoid downloading timeout#
+# Avoid downloading timeout #
 options(timeout = max(1000, getOption("timeout")))
 
-#downloading the files from Inside Aibnb#
+# Downloading the files from Inside Aibnb #
 files = list(c(url='http://data.insideairbnb.com/france/ile-de-france/paris/2021-12-07/data/listings.csv.gz',
                fn ='listings-paris.csv.gz'),
              c(url='http://data.insideairbnb.com/france/ile-de-france/paris/2021-12-07/data/calendar.csv.gz',
