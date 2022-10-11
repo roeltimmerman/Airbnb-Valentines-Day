@@ -26,79 +26,81 @@ For this study, data from InsideAirbnb is used. To conduct our analysis of the e
 A description of all variables used in the analysis including relevant summary statistics can be found in this report. Furthermore, a variety of plots are included in the report that visualize important variables from the analysis. The main part of the report contains the analysis where the research questions will be answered. The analysis is split up into three parts with each its own research question. Finally after analyzing the results, a conclusion will be made for each of the research questions based on the analysis. 
 
 The following questions will be answered:
-1. What is the effect of Valentine's Day on the price of Airbnb listings in 'city'?
+1. What is the effect of Valentine's Day on the price of Airbnb listings in the cities Rome, Madrid and Paris?
 2. Is there a significant difference in the number of bookings on Airbnb on Valentine's day? If so, is this difference also greater in a city with a larger population?
-3. Compared to 'normal days', are relatively more Airbnb accommodations with one/two beds booked during Valentine's Day?
+3. Compared to other days in february, are there relatively more Airbnb accommodations with one/two beds booked during Valentine's Day?
 
 # Variable Descriptives
-## Price analysis
+## Prices
 The variables used in this analysis are a metric variable 'price' and a dummy variable 'valentinesday', which takes the value of 0 if the booking date is not Valentines Day, and 1 if the date is Valentines Day. Below is a histogram presented of the frequencies per total price of a listing. The mean price of an Airbnb listing of the complete data is 'r mean_price'. The mean of the 'valentinesday' dummy variable is 'r mean_valentinesday'. There are 29804 bookings captured on Valentines Day, and 801227 when it is not Valentines Day. This means that the number of observations on Valentines Day is approximately 3.7%, this can be seen in the summary statistics below. 
 
-```{r}
+```{r echo=FALSE}
 knitr::include_graphics('../../gen/analysis/output/histogram_prices.pdf')
 load('meanprice.RData')
 load('meanvalentinesday.RData')
 ```
 
-```{r}
+```{r echo=FALSE}
 valentinesday_yes_no <- read.csv("../../gen/analysis/output/valentinesday_yes_no.csv")
 valentinesday_yes_no
 ```
 
-We can compare the price on Valentines Day in a boxplot below to the price if it is not Valentines Day. What we can conclude from the boxplot is that there is a minimum to no difference between the means of the price on Valentines Day or not. If we look at the price mean per city, we can conclude that mean for Paris is the highest of all cities and that Madrid has the lowest mean. This can be verified by the lapply function of the price per cities. 
+We compare the price on Valentines Day, to the price on other days in February, this is shown in the boxplot below. What we can conclude from the boxplot is that there is a minimal to no difference between the means of the price on Valentines Day or other days in February. Looking at the mean price per city, we can conclude that the mean for Paris is the highest of all cities. Madrid has the lowest mean price overall. This is verified by using the lapply function of the price per cities. 
 
-```{r echo=TRUE}
+```{r echo=FALSE}
 knitr::include_graphics('../../gen/analysis/output/price_valentinesday_boxplot.pdf')
 ```
 
-```{r}
+```{r echo=FALSE}
 knitr::include_graphics('../../gen/analysis/output/boxplot_price_per_city.pdf')
 ```
 
-## Bookings analysis
-The variable book consists of two categories; not booked (0) and booked (1), by looking at the mean 'r mean_booked' in the data set we can conclude that Airbnb's are more booked that not booked in the chosen time period  of this dataset. This conclusion can be verified by printing out the table and the histogram for the variable booked. On valentines day 53657 Airbnb's were booked according to the data for the cities Rome, Madrid and Paris. If we compare this with a random date in February, we see that there is a small difference between both dates. Interesting is to see that on valentines day 53657 Airbnb's are booked compared to the random generated date were 53826 Airbnb's booked. We can conclude that on Valentines Day there are no more Airbnb's booked in Rome, Madrid and Paris than on other random generated date. 
+## Bookings
+The dummy variable booked consists of two categories; not booked (0) and booked (1). By looking at the mean 'r mean_booked' in the dataset we can conclude that Airbnb's are more booked than not booked in the chosen time period  of this dataset (February 2021). This conclusion can be verified by printing out the table and the histogram for the variable booked. On valentines day 53657 Airbnb's were booked according to the data for the cities Rome, Madrid and Paris. If we compare this with a random date in February, we see that there is a small difference between both dates. Interesting is to see that on valentines day 53657 Airbnb's are booked compared to the random generated date were 53826 Airbnb's booked. We can conclude that on Valentines Day there are not more Airbnb's booked in Rome, Madrid and Paris than on other random generated date in February. 
 
-```{r}
+```{r echo=FALSE}
 knitr::include_graphics('../../gen/analysis/output/histogram_booked.pdf')
 knitr::include_graphics('../../gen/analysis/output/histogram_total_bookings.pdf')
 load('meanbooked.RData')
 ```
 
-## Bed analysis
-The variable beds used in this analysis consist of two categories; zero or more than two beds (0) and 1 or 2 beds (1). If we look at the mean 'r mean_beds' we can conclude that there are more than average 1 or 2 beds in the dataset. By printing out the table, we can see below that on Valentine's Day we see that there are on average more 1 or 2 beds booked than more than two, this is the same for a day when it is not Valentine's Day. This can be verified by the boxplot below. We do need to take into account that there are a lot of outliers. 
+## Beds
+The variable beds used in this analysis consist of two categories; zero or more than two beds (0) and one or two beds (1). Looking at the mean 'r mean_beds' we can conclude that there are more than average Airbnb's with one or two beds in the dataset. By looking at the table, we can see below that on Valentine's Day there are on average more Airbnb's with one or two beds booked than Airbnb's with more than two beds. This is the same for a day in February when it is not Valentine's Day. This can be verified by the boxplot below. We do need to take into account that there are a lot of outliers. 
 
---> HISTOGRAM
-
-```{r}
+```{r echo=FALSE}
 knitr::include_graphics('../../gen/analysis/ouptput/histogram_beds.pdf')
 knitr::include_graphics('../../gen/analysis/output/beds_booked_valentinesday.pdf')
 load('meanbeds.RData')
 ```
 
-# Assumptions check 
+--> HISTOGRAM
+
+# Checking assumptions
+Before conducting the analyses to answer the research questions, there are first some assumption checks performed.
+
 ## Price analysis, Bookings analysis and Bed analysis
-Before the logistic regression can be performed, we need to check for normality. A Shapiro-Wilk test is used to see if the data is normally distributed. The data set is too big for a the normality test and therefore a random sample is of 5000 is generated. The data is normally distributed because p = 'r shapiro_test_pvalue' > 0.05, which means a logistic regression can be performed.  
+Before the logistic regression can be performed, there needs to be checked for normality. A Shapiro-Wilk test is used to see if the data is normally distributed. The whole data set is too big for the normality test and therefore a random sample of 5000 observations is generated. The data is normally distributed because p = 'r shapiro_test_pvalue' > 0.05, which means a logistic regression can be performed.  
 
-If we look at the boxplot below, we can also see that there are no extreme outliers for the price variable and therefore the data can be used to conduct a t-test. 
+Looking at the boxplot below, it is visible that there are no extreme outliers for the price variable and therefore the data can be used to conduct a t-test. 
 
-```{r}
+```{r echo=FALSE}
 knitr::include_graphics('../../gen/analysis/output/price_valentinesday_boxplot.pdf')
 load('shapiropvalue.RData')
 ```
 
-However if we look at the boxplot of beds, we can see a lot of outliers and therefore we do need to take this into account with the conclusion being made. 
+However looking at the boxplot of the number of beds for the Airbnb's, we can see a lot of outliers and therefore this needs to be taken into account, when drawing conclusion based on this data. 
 
-```{r}
+```{r echo=FALSE}
 knitr::include_graphics('../../gen/analysis/output/beds_booked_valentinesday.pdf')
 ```
 
 # Analysis
 ## Price analysis
-This analysis will answer the following question: "What is the effect of Valentine's Day on the price of Airbnb listings in 'city'?" A t-test will be performed. 
+This analysis will answer the following question: "What is the effect of Valentine's Day on the price of Airbnb listings in Rome, Madrid and Paris?". A t-test will be performed. 
 
-First we look at the t-test per listing of all cities captured. This t-test is not statistically significant 'r ttest_pvalue' > p = 0.05. Additionally, t-test results for the different cities Madrid p = ' r pvalue_madrid', Paris p = 'r pvalue_paris' and Rome p = 'r pvalue_rome', are all > p = 0.05. For all cities the p-value of the t-test is not significant. Based on those values we can conclude that there is no significance found in any of the results of the t-test and that Valentines' Day has no significant effect on the price of the Airbnb listings in the cities. 
+First taking a look at the t-test per listing of all cities researched. This t-test is not statistically significant 'r ttest_pvalue' > p = 0.05. Additionally, t-test results for the different cities Madrid p = ' r pvalue_madrid', Paris p = 'r pvalue_paris' and Rome p = 'r pvalue_rome', are all > p = 0.05. Meaning that for all the cities the p-value of the t-test is not significant. Based on those values we can conclude that there is no significance found in any of the results of the t-test and that Valentine's Day has no significant effect on the price of the Airbnb listings in the cities. 
 
-```{r}
+```{r echo=FALSE}
 load('ttestpvalue.RData')
 load('pvaluemardrid.RData')
 load('pvalueparis.RData')
@@ -106,9 +108,9 @@ load('pvaluerome.RData')
 ```
 
 ## Bookings analysis --> SIGNIFICANT PVALUE STAAT NIET IN DE TEST? 
-This analysis will answer the following question: "Is there a significant difference in the number of bookings on Airbnb on Valentine's day? If so, is this difference also greater in a city with a larger population?". An logistic regression will be performed. 
+This analysis will answer the following question: "Is there a significant difference in the number of bookings on Airbnb on Valentine's day? If so, is this difference also greater in a city with a larger population?". Herefore a logistic regression will be performed. 
 
-First we look at a logistic regression for all cities combined. Looking at the exponents of the logistic regression we can conclude that if Airbnb's change from non booked to booked the value of valentinesday will change with 1.025085.If we look at the exponents per city of the logistic regression we see that there are small differences per city. If Airbnb's are booked Madrid will go down by a value of 0.9961, Rome will go up by a value of 1.005468 and Paris by a value of 1.006446. From the exponents we can conclude that Madrid has the smallest change in value and Paris the biggest if the Airbnb's in the data set go from non booked to booked. To answer the question stated above there is no significant change in the number of Airbnb bookings on Valentines day if we look at the logistic regression and the descriptive statistics. Looking at the difference in population of the cities there is no significant change between the the cities, however Madrid will decrease instead of increase. Also, the biggest change in value for Paris has no relation to biggest population of the cities. Paris has namely the smallest population of the three cities. Lastly a model fit is performed with a log likelihood ratio test in order to test if the model is significant and see if H0 can be rejected. H0 test if all coefficients are zero. The log likelihood ratio test gives us a value of 0.009886. 0.009885 < 0.05 and therefore significant and H0 can be rejected. 
+First we will look at a logistic regression for all cities combined. Looking at the exponents of the logistic regression we can conclude that if Airbnb's change from non booked to booked the value of Valentine's Day will change with 1.025085. If we look at the exponents per city of the logistic regression we see that there are small differences per city. If Airbnb's are booked Madrid will go down by a value of 0.9961, Rome will go up by a value of 1.005468 and Paris by a value of 1.006446. From the exponents we can conclude that Madrid has the smallest change in value and Paris the biggest if the Airbnb's in the data set go from non booked to booked. To answer the question stated above there is no significant change in the number of Airbnb bookings on Valentine's Day if we look at the logistic regression and the descriptive statistics. Looking at the difference in population of the cities there is no significant change between the the cities, however Madrid will decrease instead of increase. Also, the biggest change in value for Paris has no relation to biggest population of the cities. Paris has namely the smallest population of the three cities. Lastly a model fit is performed with a log likelihood ratio test in order to test if the model is significant and see if H0 can be rejected. H0 test if all coefficients are zero. The log likelihood ratio test gives us a value of 0.009886. 0.009885 < 0.05 and therefore significant and H0 can be rejected. 
 
 ## Beds analysis --> SIGNIFICANT PVALUE STAAT NIET IN DE TEST? 
 This analysis will answer the following question: "Compared to 'normal days', are relatively more Airbnb accommodations with one/two beds booked during Valentine's Day?". A logstic regression will be performed. 
@@ -116,4 +118,4 @@ This analysis will answer the following question: "Compared to 'normal days', ar
 First we look at a logistic regression for all cities combined. Looking at the exponents of the logistic regression we can conclude that if Airbnb's change from zero or more than two beds to 1 or to beds the value of Valentine's Day will change with 0.998608. If we look at the exponents per city of the logistic regression we see that there are small differences per city. If Airbnb's are booked Madrid will go up by a value of  1.000008. However, Rome will decrease by a value of 0.9998941 and Paris by a value of 0.9979593. From the exponents we can conclude that Madrid has the smallest and positive change in value , while Rome has the biggest negative change in Airbnb's in the data set going from zero or more than two beds to 1 or to beds the value. To answer the question stated above there is no significant difference in if zero or more than two beds are booked or 1 or 2 beds are booked. Looking at the difference in population of the cities there is no significant change between the the cities. However there is a difference in direction as only Madrid is significant. Lastly a model fit is performed with a log likelihood ratio test in order to test if the model is significant and see if H0 can be rejected. H0 test if all coefficients are zero. The log likelihood ratio test gives us a value of 0.7905802. 0.7905802 < 0.05 and therefore significant and H0 can be rejected. 
 
 ## Results
-Looking at the first analysis, we can conclude that there is no statistically significant finding about the influence of Valentine's Day on the price of Airbnb listings. Therefore, we can not make any conclusions about the influence of Valentines Day on the price of listings in Madrid, Paris and Rome. If we look at the second analysis we can conclude that there is as well no statistically significant result about the fact if Valentine's Day has effect on the number of bookings. So the same for the first analysis, we can not make any conclusions about the influence of Valentines Day on the number of bookings in Madrid, Paris and Rome. Lastly, the analysis of the number of beds. Here we again did not find any statistically significant finding about the influence of Valentine's Day on the number of beds. Which means again there cannot be made any conclusions about the influence of Valentines Day on the number of beds in Madrid, Paris and Rome.
+Looking at the first analysis, we can conclude that there is no statistically significant finding about the influence of Valentine's Day on the price of Airbnb listings. Therefore, we can not draw any conclusions about the influence of Valentines Day on the price of listings in Madrid, Paris and Rome. If we look at the second analysis we can conclude that there is as well no statistically significant result about the fact whether Valentine's Day has an effect on the number of bookings. So the same as for the first analysis, we can not draw any conclusions about the influence of Valentines Day on the number of bookings in Madrid, Paris and Rome. Lastly, the analysis of the number of beds. Here we again did not find any statistically significant results about the influence of Valentine's Day on the number of beds per Airbnb booking. Which means again that there is not significant influence of Valentine's Day on the number of beds per Airbnb booked in Madrid, Paris and Rome.
