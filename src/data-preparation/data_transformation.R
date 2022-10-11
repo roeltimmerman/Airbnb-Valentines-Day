@@ -2,6 +2,10 @@
 ## DATA TRANSFORMATION ##
 #########################
 
+# load libraries #
+library(tidyverse)
+library(dplyr)
+
 ## INPUT ## 
 complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
 
