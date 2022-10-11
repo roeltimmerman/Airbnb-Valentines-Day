@@ -11,10 +11,6 @@ library(ggpubr)
 complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
 
 ## TRANSFORMATION ##
-complete_data_booked <- complete_data %>% 
-    filter(complete_data$booked == 1)
-complete_data_booked$beds_dummy <- ifelse(complete_data_booked$beds <= 2, 1, 0)
-
 # Descriptive statistics #
 # Descriptives beds dummy
 summary(complete_data_booked$beds_dummy)
@@ -22,7 +18,6 @@ mean_beds <- mean(complete_data_booked$beds_dummy)
 save(mean_beds, file = 'meanbeds.RData')
 
 data_beds <- table(complete_data_booked$valentinesday, complete_data_booked$beds_dummy)
-
 # Visualization beds #
 histogram_beds <- hist(complete_data_booked$beds, xlab = 'number of beds')
 
