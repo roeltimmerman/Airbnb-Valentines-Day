@@ -12,6 +12,9 @@ complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv")
 
 ## TRANSFORMATION ##
 summary(complete_data$booked)
+mean_booked <- mean(complete_data$booked)
+save(mean_booked, file = 'meanbooked.RData')
+
 table(complete_data$booked)
 histogram_booked <- hist(complete_data$booked, xlab = 'booked')
 
