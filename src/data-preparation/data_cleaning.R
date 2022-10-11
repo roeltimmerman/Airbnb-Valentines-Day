@@ -150,8 +150,16 @@ complete_data_withNA <- bind_rows(madrid_data, paris_data, rome_data)
 complete_data_withNA
 
 # Remove missings #
-complete_data_before_trans <- na.omit(complete_data_withNA)
+complete_data <- na.omit(complete_data_withNA)
+
+## TRANSFORMATION of complete_data ##
+# Price as numeric #
+complete_data$price <- as.numeric(as.factor(complete_data$price)) 
+# Beds as dummy #
+complete_data_booked <- complete_data %>% 
+    filter(complete_data$booked == 1)
+complete_data_booked$beds_dummy <- ifelse(complete_data_booked$beds <= 2, 1, 0)
 
 ## OUTPUT ## 
-write.csv(complete_data_before_trans, "../../gen/data-preparation/temp/complete_data_before_trans.csv")
-
+write.csv(complete_data, "../../gen/data-preparation/temp/complete_data.csv")
+write.csv(complete_data_booked, "../../gen/data-preparation/temp/complete_data_booked.csv")

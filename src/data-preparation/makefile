@@ -8,10 +8,7 @@ $(DATA)/listings-paris.csv.gz $(DATA)/calendar-paris.csv.gz $(DATA)/listings-rom
 	R --vanilla < download_data.R
 	
 $(TEMP)/complete_data.csv: data_cleaning.R
-	R --vanilla < data cleaning.R
-
-$(TEMP)/complete_data.csv: data_transformation.R
-	R --vanilla < data_transformation.R
+	R --vanilla < data_cleaning.R
 	
 $(EXPLORATION)/data_exploration.html: data_exploration.Rmd
 	Rscript -e 'rmarkdown::render("data_exploration.Rmd")'
