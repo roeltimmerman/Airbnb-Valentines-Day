@@ -10,13 +10,6 @@ date: "2022-09-28"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, echo=FALSE}
-# Load data
-list_par <- read.csv(gzfile('../../data/listings-paris.csv.gz'))
-list_rom <- read.csv(gzfile('../../data/listings-rome.csv.gz')) 
-list_mad <- read.csv(gzfile('../../data/listings-madrid.csv.gz'))
-```
-
 ```{r, echo=FALSE, include=FALSE}
 # Load packages
 library(dplyr)
@@ -24,15 +17,21 @@ library(tidyverse)
 library(scales)
 ```
 
-```{r, echo=FALSE, include=FALSE}
-head(list_par)
+```{r, echo=FALSE}
+# Load data
+list_par <- read.csv(gzfile('../../data/listings-paris.csv.gz'))
+list_rom <- read.csv(gzfile('../../data/listings-rome.csv.gz')) 
+list_mad <- read.csv(gzfile('../../data/listings-madrid.csv.gz'))
 ```
 
 ```{r}
+summary(list_mad$beds)
 summary(list_mad$room_type)
 summary(list_mad$price)
+summary(list_par$beds)
 summary(list_par$room_type)
 summary(list_par$price)
+summary(list_rom$beds)
 summary(list_rom$room_type)
 summary(list_rom$price)
 ```
@@ -98,7 +97,7 @@ legend("topright", c("Entire home/apt","Hotel room","Private room","Shared room"
 # Basic piechart
 piepercent_par<- round(100*table(list_par$room_type)/sum(table(list_par$room_type)), 1)
 
-pie(table(list_par$room_type), labels = piepercent_par, main = "Paris pie chart", col = rainbow(length(table(list_par$room_type)), s = 0.5))
+pie(table(list_par$room_type), labels = paste0(piepercent_par, "%"), main = "Paris pie chart", col = rainbow(length(table(list_par$room_type)), s = 0.5))
 legend("topright", c("Entire home/apt","Hotel room","Private room","Shared room"), cex = 0.8,
        fill = rainbow(length(table(list_par$room_type)), s = 0.5))
 ```
@@ -107,14 +106,10 @@ legend("topright", c("Entire home/apt","Hotel room","Private room","Shared room"
 # Basic piechart
 piepercent_rom<- round(100*table(list_rom$room_type)/sum(table(list_rom$room_type)), 1)
 
-pie(table(list_rom$room_type), labels = piepercent_rom, main = "Rome pie chart", col = rainbow(length(table(list_rom$room_type)), s = 0.5))
+pie(table(list_rom$room_type), labels = paste0(piepercent_rom, "%"), main = "Rome pie chart", col = rainbow(length(table(list_rom$room_type)), s = 0.5))
 legend("topright", c("Entire home/apt","Hotel room","Private room","Shared room"), cex = 0.8,
        fill = rainbow(length(table(list_rom$room_type)), s = 0.5))
 ```
-
-
-
-**Optie 1**
 
 ```{r, echo=FALSE}
 # Frequency Bar Graph
@@ -164,10 +159,6 @@ ggplot(list_rom, aes(x = room_type)) +
     scale_y_continuous(labels = scales::percent_format(), name = "Percentage of rooms")
 ```
 
-
-
-**Optie 2**
-
 ```{r, echo=FALSE}
 ggplot(total_list, aes(x = room_type)) +
     geom_bar(aes(fill = room_type), position = "dodge") +
@@ -177,36 +168,3 @@ ggplot(total_list, aes(x = room_type)) +
     labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
     scale_fill_viridis_d()
 ```
-
-```{r, echo=FALSE}
-ggplot(total_list, aes(x = room_type)) +
-    geom_bar(aes(y = (..count..)/sum(..count..), fill = room_type), position = "dodge") +
-    theme(axis.text.x = element_blank(),
-          axis.ticks.x = element_blank()) +
-    facet_grid(~city) +
-    labs(x = "Type of room", y = "Number of rooms", fill = "Type of room") +
-    scale_fill_viridis_d() +
-    scale_y_continuous(labels = scales::percent_format(), name = "Percentage of rooms")
-```
-
-**Niet goed nog, krijg hem niet in percentages**
-
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
