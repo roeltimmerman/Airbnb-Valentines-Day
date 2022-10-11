@@ -68,7 +68,7 @@ load('meanbooked.RData')
 The variable beds used in this analysis consist of two categories; zero or more than two beds (0) and one or two beds (1). Looking at the mean 'r mean_beds' we can conclude that there are more than average Airbnb's with one or two beds in the dataset. By looking at the table, we can see below that on Valentine's Day there are on average more Airbnb's with one or two beds booked than Airbnb's with more than two beds. This is the same for a day in February when it is not Valentine's Day. This can be verified by the boxplot below. We do need to take into account that there are a lot of outliers. 
 
 ```{r echo=FALSE}
-knitr::include_graphics('../../gen/analysis/ouptput/histogram_beds.pdf')
+knitr::include_graphics('../../gen/analysis/output/histogram_beds.pdf')
 knitr::include_graphics('../../gen/analysis/output/beds_booked_valentinesday.pdf')
 load('meanbeds.RData')
 ```
