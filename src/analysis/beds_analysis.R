@@ -8,11 +8,11 @@ library(ggplot2)
 library(ggpubr)
 
 ## INPUT ##
-complete_data <- read.csv("../../gen/data-preparation/temp/complete_data.csv") 
+complete_data_booked <- read.csv("../../gen/data-preparation/temp/complete_data_booked.csv")
 
 ## TRANSFORMATION ##
 # Descriptive statistics #
-# Descriptives beds dummy
+# Descriptives number of beds dummy
 summary(complete_data_booked$beds_dummy)
 mean_beds <- mean(complete_data_booked$beds_dummy)
 save(mean_beds, file = 'meanbeds.RData')
