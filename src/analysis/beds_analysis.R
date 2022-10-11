@@ -18,6 +18,9 @@ complete_data_booked$beds_dummy <- ifelse(complete_data_booked$beds <= 2, 1, 0)
 # Descriptive statistics #
 # Descriptives beds dummy
 summary(complete_data_booked$beds_dummy)
+mean_beds <- mean(complete_data_booked$beds_dummy)
+save(mean_beds, file = 'meanbeds.RData')
+
 data_beds <- table(complete_data_booked$valentinesday, complete_data_booked$beds_dummy)
 data_beds
 # Visualization beds
