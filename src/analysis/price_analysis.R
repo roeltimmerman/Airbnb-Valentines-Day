@@ -50,7 +50,7 @@ save(ttest_pvalue, file = 'ttestpvalue.RData')
 # Price per city 
 price_per_city <- lapply(split(complete_data, factor(complete_data$city)), function(x)t.test(data=x, price ~ valentinesday, paired=FALSE))
 pvalue_madrid <- price_per_city$Madrid$p.value
-save(pvalue_madrid, file = 'pvaluemardrid.RData')
+save(pvalue_madrid, file = 'pvaluemadrid.RData')
 pvalue_paris <- price_per_city$Paris$p.value
 save(pvalue_paris, file = 'pvalueparis.RData')
 pvalue_rome <- price_per_city$Rome$p.value
