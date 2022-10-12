@@ -31,14 +31,14 @@ The following questions will be answered:
 
 # Variable Descriptives
 ## Prices
-In order to analyze the influence of Valentine's day on the prices of Airbnb accomodations, we used the metric variable 'price'. Furthermore, we created a dummy variable 'valentinesday', which takes the value of 1 on Valentine's Day and 0 on any other day. A histogram of the frequencies per total price of a listing is presented below. The average price of an Airbnb listing from the full data is 'r mean_price'. The mean of the 'valentinesday' dummy variable is 'r mean_valentinesday'. As shown in the summary statistice below, on Valentinesday 2022, Airbnb recored 29804 bookings in Paris, Rome and Madrid. 
-This means that the number of observations on Valentine's Day is approximately 3.7%, which can be seen in the summary statistics below. 
---> snap deze tekst niet helemaal?
-
 ```{r echo=FALSE}
 load('meanprice.RData')
 load('meanvalentinesday.RData')
 ```
+
+In order to analyze the influence of Valentine's day on the prices of Airbnb accomodations, we used the metric variable 'price'. Furthermore, we created a dummy variable 'Valentinesday', which takes the value of 1 on Valentine's Day and 0 on any other day. A histogram of the frequencies per total price of a listing is presented below. The average price of an Airbnb listing from the full data is "r mean_price". The mean of the 'valentinesday' dummy variable is 'r mean_valentinesday'. As shown in the summary statistice below, on Valentinesday 2022, Airbnb recored 29804 bookings in Paris, Rome and Madrid. 
+This means that the number of observations on Valentine's Day is approximately 3.7%, which can be seen in the summary statistics below. 
+--> snap deze tekst niet helemaal?
 
 ```{r echo=FALSE}
 valentinesday_yes_no <- read.csv("../../gen/analysis/output/valentinesday_yes_no.csv")
