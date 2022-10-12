@@ -31,7 +31,10 @@ The following questions will be answered:
 
 # Variable Descriptives
 ## Prices
-The variables used in this analysis are a metric variable 'price' and a dummy variable 'valentinesday', which takes the value of 0 if the booking date is not Valentine's Day, and 1 if the date is Valentine's Day. A histogram of the frequencies per total price of a listing is presented below. The average price of an Airbnb listing from the full data is 'r mean_price'. The mean of the 'valentinesday' dummy variable is 'r mean_valentinesday'. There are 29804 bookings recorded on Valentine's Day, and 801227 when it is not Valentine's Day. This means that the number of observations on Valentine's Day is approximately 3.7%, which can be seen in the summary statistics below. 
+In order to analyze the influence of Valentine's day on the prices of Airbnb accomodations, we used the metric variable 'price'. Furthermore, we created a 
+dummy variable 'valentinesday', which takes the value of 1 on Valentine's Day and 0 on any other day. A histogram of the frequencies per total price of a listing is presented below. The average price of an Airbnb listing from the full data is 'r mean_price'. The mean of the 'valentinesday' dummy variable is 'r mean_valentinesday'. As shown in the summary statistice below, on Valentinesday 2022, Airbnb recored 29804 bookings in Paris, Rome and Madrid. 
+This means that the number of observations on Valentine's Day is approximately 3.7%, which can be seen in the summary statistics below. 
+--> snap deze tekst niet helemaal?
 
 ```{r echo=FALSE}
 load('meanprice.RData')
@@ -43,7 +46,7 @@ valentinesday_yes_no <- read.csv("../../gen/analysis/output/valentinesday_yes_no
 valentinesday_yes_no
 ```
 
-We compare the price on Valentine's Day with the price on other days in February that can be seen in the boxplot below. What we can conclude from the boxplot is that there is minimal to no difference between the averages of the price on Valentine's Day and other days in February. Looking at the average price per city, we can conclude that the average for Paris is the highest among all cities. Furthermore, Madrid has the lowest average price. This is verified using the lapply function of the price per cities. 
+We compare the price on Valentine's Day with the price on days two weeks before and after the celebration. The outcome of this comparison can be seen in the boxplot below. According to the generated boxplot, we can conclude that the difference between the averages price of accomodations on Valentine's Day and 'normal' days is very small. Furthermore, comparing the cities, we can conclude that the average price for Airbnb accomodations is highest in Paris. The average price is lowest in Madrid. This is verified by using the lapply function of the price per cities. 
 
 ```{r echo=FALSE}
 knitr::include_graphics('../../gen/analysis/output/price_valentinesday_boxplot.pdf')
@@ -54,7 +57,9 @@ knitr::include_graphics('../../gen/analysis/output/boxplot_price_per_city.pdf')
 ```
 
 ## Bookings
-The dummy variable booked consists of two categories; not booked (0) and booked (1). By looking at the average 'r mean_booked' in the dataset, we can conclude that Airbnb's are more booked than not booked in the chosen time period  of this dataset (February 2021). This conclusion can be verified by printing out the table and the histogram for the variable 'booked'. On Valentine's Day, 53657 Airbnbs were booked according to the data for the cities Rome, Madrid and Paris. If we compare this with a random date in February, we can see that there is a slight difference between the two dates. It is interesting to see that 53657 Airbnbs were booked on Valentine's Day  compared to the randomly generated date where 53826 Airbnbs were booked. We can conclude that no more Airbnbs were booked in Rome, MAdrdid and Paris on Valentine's Day than on any other randomly generated date in February. 
+In order to analyze the influence of Valentine's day on bookings, we created a dummy variable for booked accomodations. The dummy variable booked consists of two categories; an accomodation that has not been booked (0) and an accomodation that has been booked (1). Looking at "r mean_booked" in the dataset, we conclude that Airbnb's are more booked than unbooked in the chosen time period of this dataset (January 31st - February 28th). This conclusion can be verified by printing out the table and the histogram for the variable 'booked'. 
+
+A total of 53657 Airbnbs were booked in Rome, Madrid and Paris on Valentine's Day. Taking all other dates of our dataset, on average, 53826 accommodations are booked for the cities. Therefore, we can conclude that during Valentine's Day, no more accommodations are being booked through airbnb but even slightly less. 
 
 ```{r echo=FALSE}
 load('meanbooked.RData')
