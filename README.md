@@ -14,9 +14,9 @@ Therefore, this study proposes the following research question:
 *What is the effect of Valentine's Day on Airbnb listings in Europe?*
 
 During this project, we will zoom in on several major cities in Europe. We find this interesting as countries cebelrate Valentine's Day with different intensities. Furthermore, will be focusing on the following subquestions:
-- What is the effect of Valentine's Day on the price of Airbnb listings in 'city'?
-- Is there a significant difference in the number of bookings on Airbnb on Valentine's day? If so, is this difference also greater in a city with a larger population?
-- Compared to 'normal days', are relatively more Airbnb accommodations with one/two beds booked during Valentine's Day?
+1.  What is the effect of Valentine's Day on the price of Airbnb listings in 'city'?
+2. Is there a significant difference in the number of bookings on Airbnb on Valentine's day? If so, is this difference also greater in a city with a larger population?
+3. Compared to 'normal days', are relatively more Airbnb accommodations with one/two beds booked during Valentine's Day?
 
 We expect that there will be an increase in demand for Airbnb accomodations during Valentine's Day. When demand increases, hosts are allowed to charge higher prices for their accomodations. Therefore, we expect the average price of Airbnb listings to increase during Valentines's Day. Moreover, we expect that more accommodations for 2 people are likely to be booked, as couples usually celebrate Valentine's Day. Lastly, we expect to see a difference in the number of bookings during Valentin's day to be bigger in large cities. 
 
@@ -30,13 +30,13 @@ As discussed above Data from Inside Airbnb will be used to look at three differe
 
 Analysis:
 
-Several ANOVA analyses?
+In order to answer the research question, we used several types of analysis. For the analysis of the effect of Valentine's Day on Airbnb listings, a t-test has been performed. In addition, a logistic regression was performed to examine the effects on the number of bookings. This type of regression was also used to examine whether accommodations with fewer (one/two) beds are booked during Valentine's Day. We compared the outcomes of different cities (paris, rome, madrid) in all these analyses. 
 
 Variables:
 
-DV: price, accomodation type/characteristics, number of bookings
+Dependent variables: Price, Booking of listing, Number of beds in booked listings
 
-IV: Valentine's Day
+Independent variable: Valentine's Day
 
 Moderator: city (size)
 
