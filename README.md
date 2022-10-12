@@ -24,6 +24,12 @@ We expect that there will be an increase in demand for Airbnb accomodations duri
 The data used in this research project was obtained from [Inside Airbnb](http://insideairbnb.com/). For this research, we looked into the data starting from two weeks before Valentine's Day 2022 (January 31st) untill two weeks after Valentine's day 2022 (February 18th). We created a dummy for Valentine's Day, this allowed us to compare the effect of Valentine's Day with other, 'normal' days. For this analysis, we compare three major cities in Europe: Paris, Rome and Madrid. 
 
 ## Method and results
+**Variables**
+
+
+ADD TABLE
+
+
 **Method**
 
 As discussed above Data from Inside Airbnb will be used to look at three different cities in Europe regarding their Airbnb listings in the month of februari and especially Valentine's Day. The analysis of the Airbnb data will start with the city Paris, and will later expand to doing the same analysis for the other cities in Europe. 
@@ -57,6 +63,10 @@ Moderator: City (Paris/Rome/Madrid)
     ├── data-preparation
     └── paper
 ```
+## Dependencies
+
+Add installed packages etc.
+
 ## Running instructions
 
 
