@@ -64,6 +64,15 @@ In order to answer the research question, we used several types of analysis. For
 
 Add installed packages etc.
 
+- ```install.packages('tidyverse')```
+- ```install.packages('dplyr')```
+- ```install.packages('ggplot2')```
+- ```install.packages('readr')```
+- ```install.packages('stringr')```
+- ```install.packages('ggpubr') ```
+- ```install.packages('car') ```
+- ```install.packages('scales')```
+
 ## Running instructions
 
 
