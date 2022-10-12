@@ -11,4 +11,4 @@ $(TEMP)/complete_data.csv: data_cleaning.R
 	R --vanilla < data_cleaning.R
 	
 $(EXPLORATION)/data_exploration.html: data_exploration.Rmd
-	Rscript -e 'rmarkdown::render("data_exploration.Rmd")'
+	Rscript -e 'rmarkdown::render("data_exploration.Rmd", output_format = "all")'

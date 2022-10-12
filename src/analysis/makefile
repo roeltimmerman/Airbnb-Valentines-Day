@@ -20,4 +20,4 @@ $(ANALYSIS)/histogram_beds.pdf $(ANALYSIS)/beds_booked_valentinesday.pdf: $(TEMP
 # output analysis nog toevoegen
 
 $(REPORT)/report.html: report.Rmd
-	Rscript -e 'rmarkdown::render("report.Rmd")'
+	Rscript -e 'rmarkdown::render("report.Rmd", output_format="all")'
