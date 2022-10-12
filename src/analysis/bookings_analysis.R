@@ -31,6 +31,7 @@ shapiro.test(complete_data_sample)
 # Logistic regression bookings #
 # Total bookings 
 glm1 <- glm(booked ~ valentinesday, complete_data, family = binomial) 
+summary(glm1)
 exp(glm1$coefficients)
 histogram_total_bookings <- hist(complete_data$booked, xlab = 'booked') 
 
@@ -41,6 +42,7 @@ glm1_chisqdf <- glm1$df.null-glm1$df.residual
 
 # Bookings per city 
 glm1_per_city <- lapply(split(complete_data, factor(complete_data$city)), function(x)glm(data=x, booked ~ valentinesday))
+summary(glm1_per_city)
 lapply(glm1_per_city, function(x) 
 exp(x$coefficients))
 
