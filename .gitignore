@@ -5,3 +5,7 @@
 **.Rout
 *.csv
 .Rproj.user
+**gen
+**data/
+**RData
+**html
