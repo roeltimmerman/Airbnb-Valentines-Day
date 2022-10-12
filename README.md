@@ -53,7 +53,9 @@ In order to answer the research question, we used several types of analysis. For
 ├── data
 ├── gen
 │   ├── analysis
+│   │   └── output
 │   ├── data-preparation
+│   │   └── temp
 │   └── paper
 └── src
     ├── analysis
@@ -64,18 +66,30 @@ In order to answer the research question, we used several types of analysis. For
 
 Add installed packages etc.
 
-- ```install.packages('tidyverse')```
-- ```install.packages('dplyr')```
-- ```install.packages('ggplot2')```
-- ```install.packages('readr')```
-- ```install.packages('stringr')```
-- ```install.packages('ggpubr') ```
-- ```install.packages('car') ```
-- ```install.packages('scales')```
+- Install [Python](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/python/).
+- Install [R and RStudio](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/r/).
+- Install [make](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/make/).
+
+For R, install the following packages:
+```
+install.packages('tidyverse')
+install.packages('dplyr')
+install.packages('ggplot2')
+install.packages('readr')
+install.packages('stringr')
+install.packages('ggpubr') 
+install.packages('car') 
+install.packages('scales')
+```
 
 ## Running instructions
 
 
 ## About
 
-This research project is part of the [Data Preparation and Workflow Management (dPrep)](https://dprep.hannesdatta.com/) course at Tilburg University and is conducted by Team 12. The contributors of the research are: [Anouk Bor](https://github.com/AnoukBor), [Eva Bos](https://github.com/EvaBos), [Bi Xuan Guo](https://github.com/bixuanguo), [Mandana Khabbazi](https://github.com/Mandanakhabbazi), [Indi Wieggers](https://github.com/indiwieggers123).
+This research project is part of the [Data Preparation and Workflow Management (dPrep)](https://dprep.hannesdatta.com/) course at Tilburg University and is conducted by Team 12. The contributors of the research are:
+- [Anouk Bor](https://github.com/AnoukBor)
+- [Eva Bos](https://github.com/EvaBos)
+- [Bi Xuan Guo](https://github.com/bixuanguo)
+- [Mandana Khabbazi](https://github.com/Mandanakhabbazi)
+- [Indi Wieggers](https://github.com/indiwieggers123)
