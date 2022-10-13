@@ -159,20 +159,30 @@ complete_data$price <- as.numeric(as.factor(complete_data$price))
 complete_data_booked <- complete_data %>% 
     filter(complete_data$booked == 1)
 complete_data_booked$beds_dummy <- ifelse(complete_data_booked$beds <= 2, 1, 0)
+
 # Per city #
 # Madrid #
+complete_data_mad <- complete_data %>%
+    filter(complete_data$city == "Madrid")
 complete_data_booked_mad <- complete_data_booked %>%
     filter(complete_data_booked$city == "Madrid")
 # Paris #
+complete_data_par <- complete_data %>%
+    filter(complete_data$city == "Paris")
 complete_data_booked_par <- complete_data_booked %>%
     filter(complete_data_booked$city == "Paris")
 # Rome #
+complete_data_rom <- complete_data %>%
+    filter(complete_data$city == "Rome")
 complete_data_booked_rom <- complete_data_booked %>%
     filter(complete_data_booked$city == "Rome")
 
 ## OUTPUT ## 
 write.csv(complete_data, "../../gen/data-preparation/temp/complete_data.csv")
 write.csv(complete_data_booked, "../../gen/data-preparation/temp/complete_data_booked.csv")
+write.csv(complete_data_mad, "../../gen/data-preparation/temp/complete_data_mad.csv")
+write.csv(complete_data_par, "../../gen/data-preparation/temp/complete_data_par.csv")
+write.csv(complete_data_rom, "../../gen/data-preparation/temp/complete_data_rom.csv")
 write.csv(complete_data_booked_mad, "../../gen/data-preparation/temp/complete_data_booked_mad.csv")
 write.csv(complete_data_booked_par, "../../gen/data-preparation/temp/complete_data_booked_par.csv")
 write.csv(complete_data_booked_rom, "../../gen/data-preparation/temp/complete_data_booked_rom.csv")
