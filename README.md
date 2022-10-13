@@ -56,9 +56,9 @@ In order to answer the research question, we used several types of analysis. For
 
 Add results
 
-**Conclusion?**
+**Conclusion**
 
-From the price analysis, we found no significant results from the t-tests. Therefore, we can conclude that Valentine's Day has no significant effect on the price of Airbnb bookings in the cities. Moreover, Valentine's Day has a significant effect on the number of Airbnb bookings, with a small change between the cities. Compared to the other cities, Madrid decreases rather than increases. Finally, there is no significant effect of Valentine's Day on the number of beds, as no significant results could be found.
+From the first analysis, we can conclude that there is no statistically significant finding on the influence of Valentine's Day on the price of Airbnb listings. Therefore, we cannot draw any conclusions about the influence of Valentine's Day on the price of listings in Madrid, Paris and Rome. From the second analysis we can conclude that Valentine's Day has a significant effect on the number of bookings. However if we look into the cities separately we see no significant effect and therefore only can conclude that for Rome, Madrid and Paris together, Valtenine's Day has an effect. Finally, we also found no statistically significant results in the last analysis on the number of beds. Again, we cannot conclude that Valentine's Day has an impact on the number of beds per Airbnb booking. This again means that there is not significant influence of Valentine's Day on the number of beds per Airbnb booked in Madrid, Paris and Rome.
 
 ## Repository overview
 ```
@@ -93,6 +93,7 @@ install.packages('stringr')
 install.packages('ggpubr') 
 install.packages('car') 
 install.packages('scales')
+install.packages('stargazer')
 ```
 
 ## Running instructions
