@@ -37,15 +37,28 @@ Independent variable: Valentine's Day
 
 Moderator: City (Paris/Rome/Madrid)
 
-ADD TABLE
+Variable | Description
+-------- | --------
+price | The price of the Airbnb listing in dollars
+bookings | Dummy variable: whether the accommodation is unbooked (0) or booked (1)
+beds | Dummy variable: zero or more than two beds (0) or one or two beds (1)
+valentinesday | Dummy variable: whether it is not Valentine's Day (0) or it is (1)
+city | The city where the Airbnb ad is located (Madrid, Paris or Rome)
+
 
 **Analysis**
 
-In order to answer the research question, we used several types of analysis. For the analysis of the effect of Valentine's Day on Airbnb listings, a t-test has been performed. In addition, a logistic regression was performed to examine the effects on the number of bookings. This type of regression was also used to examine whether accommodations with fewer (one/two) beds are booked during Valentine's Day. We compared the outcomes of different cities (paris, rome, madrid) in all these analyses. 
+In order to answer the research question, we used several types of analysis. For the analysis of the effect of Valentine's Day on Airbnb listings, a t-test has been performed. In addition, a logistic regression was performed to examine the effects on the number of bookings. This type of regression was also used to examine whether accommodations with fewer (one/two) beds are booked during Valentine's Day. We compared the outcomes of different cities (Madrid, Paris, Rome) in all these analyses. 
 
 ![Conceptual model](https://user-images.githubusercontent.com/91567676/192151644-fab4ce64-46ab-46e4-8eb9-367f85869462.png)
 
 **Results**
+
+Add results
+
+**Conclusion?**
+
+From the price analysis, we found no significant results from the t-tests. Therefore, we can conclude that Valentine's Day has no significant effect on the price of Airbnb bookings in the cities. Moreover, Valentine's Day has a significant effect on the number of Airbnb bookings, with a small change between the cities. Compared to the other cities, Madrid decreases rather than increases. Finally, there is no significant effect of Valentine's Day on the number of beds, as no significant results could be found.
 
 ## Repository overview
 ```
