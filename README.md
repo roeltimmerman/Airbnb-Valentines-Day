@@ -54,6 +54,7 @@ city | The city where the Airbnb ad is located (Madrid, Paris or Rome)
 In order to answer the research question, we used several types of analysis. For the analysis of the effect of Valentine's Day on the price Airbnb listings, a t-test has been performed. In addition, a logistic regression was performed to examine the effect of Valentine's Day on the number of bookings. This type of regression was also used to examine whether accommodations with fewer (one/two) beds are booked during Valentine's Day. We compared the outcomes of different cities (Madrid, Paris, Rome) in all these analyses.
 
 **Results**
+
 The null hypothesis of the price analysis stated as follows: Valentine's day has no influence on the prices of Airbnb listings. The result from the T-test (p>0.05) indicate that the null hypothesis cannot be rejected. Additionally, the T-test for the different also found a p>0.05. Therefore, no significant relation has been found between Valentine's Day and prices of Airbnb listings. 
 
 Next, the null hypothesis for the bookings analysis stated as follows: Valentine's day has no influence on the amount of booked Airbnb's. The result from the logistic regression show a p-value<0.01. Therefore, the null hypothesis could be rejected. On Valentine's Day, the odds of a listing being booked, increases with 1.03. Looking at the exponents, we found a small difference of this effect between cities. 
