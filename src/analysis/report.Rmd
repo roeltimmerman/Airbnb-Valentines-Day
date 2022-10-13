@@ -76,8 +76,6 @@ knitr::include_graphics('../../gen/analysis/output/beds_booked_valentinesday.pdf
 load('shapiropvalue.RData')
 ```
 
---> HISTOGRAM
-
 # Checking assumptions
 Before the analyses are conducted to answer the research questions, some assumptions are first checked.
 
