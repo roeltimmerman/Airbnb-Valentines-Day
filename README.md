@@ -45,12 +45,11 @@ beds | Dummy variable: zero or more than two beds (0) or one or two beds (1)
 valentinesday | Dummy variable: whether it is not Valentine's Day (0) or it is (1)
 city | The city where the Airbnb ad is located (Madrid, Paris or Rome)
 
+![Conceptual model](https://user-images.githubusercontent.com/91567676/195590567-2f9e9970-d5a2-4043-8b22-a1517a0df328.png)
 
 **Analysis**
 
-In order to answer the research question, we used several types of analysis. For the analysis of the effect of Valentine's Day on Airbnb listings, a t-test has been performed. In addition, a logistic regression was performed to examine the effects on the number of bookings. This type of regression was also used to examine whether accommodations with fewer (one/two) beds are booked during Valentine's Day. We compared the outcomes of different cities (Madrid, Paris, Rome) in all these analyses. 
-
-![Conceptual model](https://user-images.githubusercontent.com/91567676/192151644-fab4ce64-46ab-46e4-8eb9-367f85869462.png)
+In order to answer the research question, we used several types of analysis. For the analysis of the effect of Valentine's Day on the price Airbnb listings, a t-test has been performed. In addition, a logistic regression was performed to examine the effect of Valentine's Day on the number of bookings. This type of regression was also used to examine whether accommodations with fewer (one/two) beds are booked during Valentine's Day. We compared the outcomes of different cities (Madrid, Paris, Rome) in all these analyses.
 
 **Results**
 
