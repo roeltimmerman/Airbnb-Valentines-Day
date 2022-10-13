@@ -97,21 +97,42 @@ install.packages('scales')
 
 ## Running instructions
 
-Step-by-step
+**Step-by-step**
 
-Fork this repository
+To run the code, we recommend using the make file. Please follow the following instructions:
 
-Open your command line / terminal and run:
+1. Fork this repository
 
-git clone url
+2. Open your command line / terminal and run:
 
-Set your working directory to ... and run
+```
+git clone https://github.com/{your username}/Airbnb-Valentines-Day.git
+```
 
+3. Set your working directory to:
+
+```
+Airbnb-Valentines-Day
+```
+
+4. Run make using the following command:
+
+```
 make
+```
 
-To clean the data:
+Make will run all code and delete all raw and unnecessary data files created during the pipeline.
 
-make clean
+Alternatively, one can run the scripts/files in the following order:
+
+- install_packages.R
+- download_data.R
+- data_cleaning.R
+- data_exploration.Rmd
+- price_analysis.R
+- bookings.analysis.R
+- beds.analysis.R
+- report.Rmd
 
 ## About
 
