@@ -17,6 +17,7 @@ During this project, we will zoom in on three major cities in Europe. We find th
 1. What is the influence of Valentine's Day on the price of Airbnb listings?
 2. What is the influence of Valentine's Day on the number of booked Airbnb listings? 
 3. Compared to 'normal days', are relatively more Airbnb accommodations with one/two beds booked during Valentine's Day?
+
 These sub-questions will include comparisons between the cities of Paris, Rome and mMadrid. We have chosen these cities as celebrating Valentine's Day is very popular in these places. 
 
 We expect that there will be an increase in demand for Airbnb accomodations during Valentine's Day. When demand increases, hosts are allowed to charge higher prices for their accomodations. Therefore, we expect the average price of Airbnb listings to increase during Valentines's Day. Moreover, we expect that more accommodations for 2 people are likely to be booked, as couples usually celebrate Valentine's Day. Lastly, we expect to see a difference in the number of bookings during Valentin's day to be bigger in large cities. 
