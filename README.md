@@ -1,4 +1,4 @@
-# How far can you go for love on Airbnb? - The effect of Valentine's Day on Airbnb listings
+# How far can you go for love on Airbnb? 
 
 Welcome to our research project! This research aims to answer the following research question:
 
