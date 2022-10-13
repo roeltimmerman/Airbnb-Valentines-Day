@@ -11,12 +11,13 @@ Valentine's day is celebrated yearly on the 14th of February. It is a day when r
 
 Therefore, this study proposes the following research question:
 
-*What is the effect of Valentine's Day on Airbnb listings in Europe?*
+*What is the effect of Valentine's Day on Airbnb listings?*
 
-During this project, we will zoom in on several major cities in Europe. We find this interesting as countries cebelrate Valentine's Day with different intensities. Furthermore, will be focusing on the following subquestions:
-1.  What is the effect of Valentine's Day on the price of Airbnb listings in 'city'?
-2. Is there a significant difference in the number of bookings on Airbnb on Valentine's day? If so, is this difference also greater in a city with a larger population?
+During this project, we will zoom in on three major cities in Europe. We find this interesting as countries cebelrate Valentine's Day with different intensities. Furthermore, will be focusing on the following subquestions:
+1. What is the influence of Valentine's Day on the price of Airbnb listings?
+2. What is the influence of Valentine's Day on the number of booked Airbnb listings? 
 3. Compared to 'normal days', are relatively more Airbnb accommodations with one/two beds booked during Valentine's Day?
+These sub-questions will include comparisons between the cities of Paris, Rome and mMadrid. We have chosen these cities as celebrating Valentine's Day is very popular in these places. 
 
 We expect that there will be an increase in demand for Airbnb accomodations during Valentine's Day. When demand increases, hosts are allowed to charge higher prices for their accomodations. Therefore, we expect the average price of Airbnb listings to increase during Valentines's Day. Moreover, we expect that more accommodations for 2 people are likely to be booked, as couples usually celebrate Valentine's Day. Lastly, we expect to see a difference in the number of bookings during Valentin's day to be bigger in large cities. 
 
