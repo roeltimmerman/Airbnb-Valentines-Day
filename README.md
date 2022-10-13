@@ -62,7 +62,7 @@ Next, the null hypothesis for the bookings analysis stated as follows: Valentine
 Lastly, 
 
 
-**Conclusion**
+## Conclusion
 
 Answering our research question, no significant relation has been found between Valentine's day and the prices of Airbnb listings. This is the case both for the accommodations in paris, rome and madrid together and for the cities separately. Secondly, a significant relation has been found between Valentine's Day and the changes of an Airbnb listing being booked. However, although the changes of a listing being booked in Paris and Rome increase on Valentine's Day, the chance of a booking decreases in Madrid on this day. Lastly, No significant relation has been found between Valentine's Day and the number of beds in the airbnbs booked.
 
