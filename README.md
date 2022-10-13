@@ -97,6 +97,21 @@ install.packages('scales')
 
 ## Running instructions
 
+Step-by-step
+
+Fork this repository
+
+Open your command line / terminal and run:
+
+git clone url
+
+Set your working directory to ... and run
+
+make
+
+To clean the data:
+
+make clean
 
 ## About
 
