@@ -3,8 +3,8 @@ title: "How far can you go for love on Airbnb? - The effect of Valentine's Day o
 author: "Anouk Bor, Eva Bos, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
 date: "2022-10-07"
 output:
-    pdf_document: default
     html_document: default
+    pdf_document: default
 ---
     
 ```{r setup, include=FALSE}
@@ -125,8 +125,6 @@ complete_data_booked_mad <- read.csv("../../gen/data-preparation/temp/complete_d
 complete_data_booked_par <- read.csv("../../gen/data-preparation/temp/complete_data_booked_par.csv")
 complete_data_booked_rom <- read.csv("../../gen/data-preparation/temp/complete_data_booked_rom.csv")
 ```
-<<<<<<< Updated upstream
-=======
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
 glm2_m1 <- glm(beds_dummy ~ valentinesday, data = complete_data_booked_mad)
@@ -137,61 +135,21 @@ glm2_m3 <- glm(beds_dummy ~ valentinesday, data = complete_data_booked_rom)
 exp(glm2_m3$coefficients)
 ```
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
-star.2 <- stargazer(glm2_m1, glm2_m2, glm2_m3,
-                    apply.coef=exp,
-                    apply.se = exp,
-                    type="text",
-                    title="Effect of Valentine's Day on number of beds of Airbnb listings",
-                    dep.var.caption = "One or two beds",
-                    dep.var.labels="",
-                    model.numbers = FALSE,
-                    column.labels = c('Madrid', 'Paris', 'Rome'),
-                    covariate.labels="Valentine's Day"
-                    )
-```
+```{r echo=FALSE, results='asis'}
+stargazer(glm2_m1, glm2_m2, glm2_m3, 
+          apply.coef=exp, 
+          apply.se = exp, 
+          type="latex", 
+          title="Effect of Valentine's Day on number of beds of Airbnb listings",
+          dep.var.caption = "One or two beds",
+          dep.var.labels="",
+          model.numbers = FALSE,
+          column.labels = c('Madrid', 'Paris', 'Rome'),
+          covariate.labels="Valentine's Day",
+          float = FALSE)
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.cap="Table 2: Effect Valentine's Day on number of beds"}
-kable(star.2)
+#table is only visibly in pdf knit
 ```
 
 ## Results
-<<<<<<< HEAD
-Answering our research question, no significant relation has been found between Valentine's day and the prices of Airbnb listings. This is the case both for the accommodations in Paris, Rome and Madrid together and for the cities separately. Secondly, a significant relation has been found between Valentine's Day and the changes of an Airbnb listing being booked. However, although the changes of a listing being booked in Paris and Rome increase on Valentine's Day, the chance of a booking decreases in Madrid on this day. Lastly, No significant relation has been found between Valentine's Day and the number of beds in the airbnbs booked.
->>>>>>> Stashed changes
-
-```{r echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
-glm2_m1 <- glm(beds_dummy ~ valentinesday, data = complete_data_booked_mad)
-exp(glm2_m1$coefficients)
-glm2_m2 <- glm(beds_dummy ~ valentinesday, data = complete_data_booked_par)
-exp(glm2_m2$coefficients)
-glm2_m3 <- glm(beds_dummy ~ valentinesday, data = complete_data_booked_rom)
-exp(glm2_m3$coefficients)
-```
-
-```{r echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
-star.2 <- stargazer(glm2_m1, glm2_m2, glm2_m3,
-                    apply.coef=exp,
-                    apply.se = exp,
-                    type="text",
-                    title="Effect of Valentine's Day on number of beds of Airbnb listings",
-                    dep.var.caption = "One or two beds",
-                    dep.var.labels="",
-                    model.numbers = FALSE,
-                    column.labels = c('Madrid', 'Paris', 'Rome'),
-                    covariate.labels="Valentine's Day"
-                    )
-```
-
-```{r echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.cap="Table 2: Effect Valentine's Day on number of beds"}
-kable(star.2)
-```
-
-<<<<<<< Updated upstream
-## Results
 From the first analysis, we can conclude that there is no statistically significant finding on the influence of Valentine's Day on the price of Airbnb listings. Therefore, we cannot draw any conclusions about the influence of Valentine's Day on the price of listings in Madrid, Paris and Rome. From the second analysis we can conclude that Valentine's Day has a significant effect on the number of bookings. However if we look into the cities separately we see no significant effect and therefore only can conclude that for Rome, Madrid and Paris together, Valentine's Day has a significant effect on the number of Airbnb bookings. Lastly, no significant relation was found between Valentine's Day and the number of beds of booked Airbnbs.
-=======
-=======
-From the first analysis, we can conclude that there is no statistically significant finding on the influence of Valentine's Day on the price of Airbnb listings. Therefore, we cannot draw any conclusions about the influence of Valentine's Day on the price of listings in Madrid, Paris and Rome. From the second analysis we can conclude that Valentine's Day has a significant effect on the number of bookings. However if we look into the cities separately we see no significant effect and therefore only can conclude that for Rome, Madrid and Paris together, Valentine's Day has a significant effect on the number of Airbnb bookings. Lastly, no significant relation was found between Valentine's Day and the number of beds of booked Airbnbs.
->>>>>>> 4a300c50c9effae36dd70d88ced9aa36d58b3d0a
->>>>>>> Stashed changes
