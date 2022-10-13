@@ -1,14 +1,13 @@
 ---
-    title: "How far can you go for love on Airbnb? - The effect of Valentine's Day on
-  Airbnb listings"
+title: "How far can you go for love on Airbnb? - The effect of Valentine's Day on Airbnb listings"
 author: "Anouk Bor, Eva Bos, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
 date: "2022-10-07"
 output:
     pdf_document: default
-html_document: default
+    html_document: default
 ---
     
-    ```{r setup, include=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -34,7 +33,7 @@ The following questions will be answered:
     
 # Variable Descriptives
 ## Prices
-    ```{r echo=FALSE}
+```{r echo=FALSE}
 load('meanprice.RData')
 load('meanvalentinesday.RData')
 load('meanbooked.RData')
