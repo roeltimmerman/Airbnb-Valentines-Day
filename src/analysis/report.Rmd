@@ -107,9 +107,6 @@ This analysis will answer the following question: "What is the effect of Valenti
 
 First, we will look at the t-test per listing for all the cities studied. This t-test is not statistically significant, as `r ttest_pvalue` > p = 0.05. Additionally, the t-test results for the different cities Madrid, p = `r pvalue_madrid`, Paris, p = `r pvalue_paris`, and Rome, p = `r pvalue_rome`, are all > p = 0.05. This means that for all cities, the p-value of the t-test is not significant. Based on these values, we can conclude that none of the results of the t-tests are significant and that Valentine's Day has no significant effect on the price of the Airbnb listings in the cities. 
 
-```{r echo=FALSE}
-```
-
 ## Bookings analysis
 This analysis will answer the following question: "Is there a significant difference in the number of bookings on Airbnb on Valentine's Day? If so, is this difference also greater in a city with a larger population?". In order to do this, a logistic regression will be performed. 
 
@@ -124,3 +121,16 @@ If we look at the exponents by city of the logistic regression, we see that ther
 
 ## Results
 From the first analysis, we can conclude that there is no statistically significant finding on the influence of Valentine's Day on the price of Airbnb listings. Therefore, we cannot draw any conclusions about the influence of Valentine's Day on the price of listings in Madrid, Paris and Rome. From the second analysis we can conclude that Valentine's Day has a significant effect on the number of bookings. However if we look into the cities separately we see no significant effect and therefore only can conclude that for Rome, Madrid and Paris together, Valtenine's Day has an effect. Finally, we also found no statistically significant results in the last analysis on the number of beds. Again, we cannot conclude that Valentine's Day has an impact on the number of beds per Airbnb booking. This again means that there is not significant influence of Valentine's Day on the number of beds per Airbnb booked in Madrid, Paris and Rome.
+
+```{r echo=FALSE}
+htmltools::includeHTML('../../gen/analysis/output/model_bookings.html')
+```
+
+```{r echo=FALSE}
+htmltools::includeHTML('../../gen/analysis/output/model_bookings_city.html')
+```
+
+```{r echo=FALSE}
+htmltools::includeHTML('../../gen/analysis/output/model_beds.html')
+```
+
