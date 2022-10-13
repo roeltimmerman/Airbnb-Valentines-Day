@@ -57,7 +57,6 @@ glm2_m3 <- glm(beds_dummy ~ valentinesday, data = complete_data_booked_rom)
 exp(glm2_m3$coefficients)
 
 ## Output ##
-#write.csv(data_beds,filename = "../../gen/analysis/output/beds_booked.csv", row.names = FALSE)
 pdf(file="../../gen/analysis/output/histogram_beds.pdf")
 dev.off()
 ggsave(plot = beds_booked_valentinesday, filename = "../../gen/analysis/output/beds_booked_valentinesday.pdf")
