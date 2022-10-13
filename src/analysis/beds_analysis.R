@@ -50,11 +50,11 @@ glm2_per_city <- lapply(split(complete_data_booked, factor(complete_data_booked$
 lapply(glm2_per_city, function(x) 
 exp(x$coefficients))
 glm2_m1 <- glm(beds_dummy ~ valentinesday, data = complete_data_booked_mad)
-exp(m1$coefficients)
+exp(glm2_m1$coefficients)
 glm2_m2 <- glm(beds_dummy ~ valentinesday, data = complete_data_booked_par)
-exp(m2$coefficients)
+exp(glm2_m2$coefficients)
 glm2_m3 <- glm(beds_dummy ~ valentinesday, data = complete_data_booked_rom)
-exp(m3$coefficients)
+exp(glm2_m3$coefficients)
 
 ## Output ##
 #write.csv(data_beds,filename = "../../gen/analysis/output/beds_booked.csv", row.names = FALSE)
