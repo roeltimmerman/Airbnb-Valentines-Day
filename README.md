@@ -55,11 +55,11 @@ In order to answer the research question, we used several types of analysis. For
 
 **Results**
 
-The null hypothesis of the price analysis stated as follows: Valentine's day has no influence on the prices of Airbnb listings. The result from the T-test (p>0.05) indicate that the null hypothesis cannot be rejected. Additionally, the T-test for the different also found a p>0.05. Therefore, no significant relation has been found between Valentine's Day and prices of Airbnb listings. 
+The null hypothesis of the price analysis stated as follows: Valentine's day has no influence on the prices of Airbnb listings. The result from the T-test for all cities together, as for the separate cities, a P-value of >0.05 has been found. Therefore, with a significance of 0.05, the H0 could not be rejected. No significant relation has been found between Valentine's Day and prices of Airbnb listings. 
 
-Next, the null hypothesis for the bookings analysis stated as follows: Valentine's day has no influence on the amount of booked Airbnb's. The result from the logistic regression show a p-value<0.01. Therefore, the null hypothesis could be rejected. On Valentine's Day, the odds of a listing being booked, increases with 1.03. Looking at the exponents, we found a small difference of this effect between cities. 
+Next, the null hypothesis for the bookings analysis stated as follows: Valentine's day has no influence on the amount of booked Airbnb's. The result from the logistic regression show a P-value<0.01. Therefore, with a significance of 0.05, the null hypothesis could be rejected. On Valentine's Day, the odds of a listing being booked, increases with 1.03. Looking at the exponents, we found a small difference of this effect between cities. On Valentine's Day, the odds of booked Airnbnb's in Madrid decrease by a value of 0.996. While in Rome, these odds increase by a value of 1.006 and in Paris by a value of 1.006. From the exponents, we can conclude that the odds of an Airbnb being booked on Valentine's Day, is the greatest in Paris. 
 
-Lastly, 
+Lastly, the null hypothesis for the bookings analysis stated as follows: Valentine's day has no influence on the number of beds in booked Airbnb's. The P-value of the logistic regression and log likelihood are both >0.05. Therefore, with a significance of 0.05, the H0 could not be rejected. No significant relation has been found between Valentine's Day and the number of beds in booked Airbnb's.
 
 
 ## Conclusion
