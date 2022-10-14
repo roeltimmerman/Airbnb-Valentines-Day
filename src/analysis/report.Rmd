@@ -21,17 +21,17 @@ library(knitr)
 ```
 
 # Introduction
-This study uses data from InsideAirbnb. For our analysis of the effect of Valentine's Day on Airbnb listings, we collected listing data from three European cities that we assumed to be popular during Valentine's Day, namely Rome, Paris and Madrid. After extracting the datasets for each city, we cleaned these data. Redundant columns were removed and new variables related to the analysis were added. The datasets from the individual cities were then merged into one complete dataset.
+In order to answer our research question, we used data from InsideAirbnb. We collected listing data from three major European cities where we suspected that Valentine's Day is a big thing here, namely Rome, Paris and Madrid. After extracting the datasets for each city, we cleaned these data. In this stage, redundant columns were removed and variables related to the analysis were added. lastly, the data sets from the individual cities were then merged into one complete dataset.
 
-A description of all variables used in the analysis, including relevant summary statistics, can be found in this report. Furthermore, the report includes several plots visualising the key variables from the analysis. The main section of the report contains the analysis that answers the research questions. The analysis consists of three parts, each with its own research question. The results of the three analyses are discussed. Ultimately, a conclusion on the effect of Valentine's Day on Airbnb listings will be drawn based on these analyses.
+In this report, a description of all variables used in the analysis, including relevant summary statistics, can be found. Furthermore, the report includes several plots visualizing the key variables from the analysis. The main section of the report contains the three analysis that will answer the research question. The results of the three analyses are discussed. Ultimately, a conclusion on the effect of Valentine's Day on Airbnb listings will be drawn based on these analyses.
 
 The following questions will be answered:
 
-1. What is the effect of Valentine's Day on the price of Airbnb listings in the cities Rome, Madrid and         Paris?
+1. What is the influence of Valentine's Day on the price of Airbnb listings?
 
-2. Is there a significant difference in the number of bookings on Airbnb on Valentine's day? If so, is this     difference also greater in a city with a larger population?
+2. What is the influence of Valentine's Day on the number of booked Airbnb listings?
 
-3. Compared to other days in february, are relatively more Airbnb accommodations with one/two beds booked       during Valentine's Day?
+3. Compared to 'normal days', are relatively more Airbnb accommodations with one/two beds booked during Valentine's Day?
     
 # Variable Descriptives
 ## Prices
