@@ -100,7 +100,7 @@ load('pvaluemadrid.RData')
 load('pvalueparis.RData')
 load('pvaluerome.RData')
 ```
-# Analysis
+# Analysis & results
 ## Price analysis
 This analysis will answer the following question: "What is the effect of Valentine's Day on the price of Airbnb listings in Rome, Madrid and Paris?". In order to answer this question, a t-test will be performed. 
 
@@ -153,5 +153,5 @@ stargazer(glm2_m1, glm2_m2, glm2_m3,
 #table is only visibly in pdf knit
 ```
 
-## Results
-From the first analysis, we can conclude that there is no statistically significant finding on the influence of Valentine's Day on the price of Airbnb listings. Therefore, we cannot draw any conclusions about the influence of Valentine's Day on the price of listings in Madrid, Paris and Rome. From the second analysis we can conclude that Valentine's Day has a significant effect on the number of bookings. However if we look into the cities separately we see no significant effect and therefore only can conclude that for Rome, Madrid and Paris together, Valentine's Day has a significant effect on the number of Airbnb bookings. Lastly, no significant relation was found between Valentine's Day and the number of beds of booked Airbnbs.
+## Conclusion
+Answering our research question, no significant relation has been found between Valentine's day and the prices of Airbnb listings. This is the case both for the accommodations in Paris, Rome and Madrid together and for the cities separately. Secondly, a significant relation has been found between Valentine's Day and the changes of an Airbnb listing being booked. However, although the changes of a listing being booked in Paris and Rome increase on Valentine's Day, the chance of a booking decreases in Madrid on this day. Lastly, No significant relation has been found between Valentine's Day and the number of beds in the Airbnbs booked.
