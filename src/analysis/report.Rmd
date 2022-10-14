@@ -102,25 +102,24 @@ load('pvaluerome.RData')
 ```
 # Analysis & results
 ## Price analysis
-This analysis will answer the following question: "What is the effect of Valentine's Day on the price of Airbnb listings in Rome, Madrid and Paris?". In order to answer this question, a t-test will be performed. 
+This analysis will answer the following question: "What is the influence of Valentine's Day on the price of Airbnb listings?". In order to answer this question, a t-test will be performed. 
 
-First, we will look at the t-test per listing for all the cities studied. This t-test is not statistically significant, as `r ttest_pvalue` > p = 0.05. Additionally, the t-test results for the different cities Madrid, p = `r pvalue_madrid`, Paris, p = `r pvalue_paris`, and Rome, p = `r pvalue_rome`, are all > p = 0.05. This means that for all cities, the p-value of the t-test is not significant. 
-
-Based on these values, we can conclude that no significant relation has been found between Valentine's Day and the prices of the Airbnb listings in Paris, Rome and Madrid.
+First, we will look at the t-test per listing for all the cities studied. This t-test is not statistically significant, as p=`r ttest_pvalue` > 0.05. Additionally, the t-test results for the different cities Madrid, p = `r pvalue_madrid`, Paris, p = `r pvalue_paris`, and Rome, p = `r pvalue_rome`, are all > 0.05. Therefore, with a significance of 0.05, H0 cannot be rejected for these three cities in Europe. 
 
 ## Bookings analysis
-This analysis will answer the following question: "Is there a significant difference in the number of bookings on Airbnb on Valentine's Day? If so, is this difference also greater in a city with a larger population?". In order to do this, a logistic regression will be performed. 
+This analysis will answer the following question: "What is the influence of Valentine's Day on the number of booked Airbnb listings?". A logistic regression will be performed. 
 
-First, we perform a logistic regression for all cities combined. The logistic regression gave us a P-value<0.01. Therefore, a significant relation between Valentine's Day and the number of bookings has been found. When looking at the exponents of the logistic regression, we can conclude that on Valentine's Day, the odds of a listing being booked, increases with 1.025085. As for the different cities, we find small differences for this relation. On Valentine's Day, the odds of booked Airnbnb's in Madrid decrease by a value of 0.9961. While in Rome, these odds increase by a value of 1.005468 and in Paris by a value of 1.006446. From the exponents, we can conclude that the odds of an Airbnb being booked on Valentine's Day, is the greatest in Paris. 
+First, we perform a logistic regression for all cities combined. The logistic regression gave us a P-value<0.01.
+Therefore, with a significance of 0.05, the H0 can be rejected. Therefore, a significant relation between Valentine's Day and the number of bookings has been found. When looking at the exponents of the logistic regression, we can conclude that on Valentine's Day, the odds of a listing being booked, increases with 1.025085. As for the different cities, we find small differences for this relation. On Valentine's Day, the odds of booked Airnbnb's in Madrid decrease by a value of 0.9961. While in Rome, these odds increase by a value of 1.005468 and in Paris by a value of 1.006446. From the exponents, we can conclude that the odds of an Airbnb being booked on Valentine's Day, is the greatest in Paris. 
 
-To answer the pre-mentioned sub-question, Valentine's Day has a significant effect on the number of Airbnb bookings and this effect differs for the three cities. While Paris and Rome saw an increase in bookings during Valentine's Day, Madrid actually saw a small decrease. Despite Paris having the smallest population of the three cities, it is here that the greatest impact can be seen. Lastly, a model fit is performed with a log likelihood ratio test to check whether the model is significant and H0 can be rejected. The log likelihood ratio test gives us a value of 0.009886, which is greater than 0.05. This is significant and so H0 can be rejected.
+Lastly, a model fit is performed with a log likelihood ratio test to check whether the model is significant and H0 can be rejected. The log likelihood ratio test gives us a P-value of 0.009886. With a significance of 0.05, H0 can be rejected. Therefore, the model has found to be significant. 
 
 ## Beds analysis
 This analysis will answer the following question: "Compared to 'normal days', are relatively more Airbnb accommodations with one/two beds booked during Valentine's Day?". In order to analyse this question, a logistic regression will be performed. 
 
-First, we will perform a logistic regression for all cities combined. The P value of the logistic regression is >0.05, therefore H0 cannot be rejected. This means that Valentine's Day has no significant effect on the amount of beds of booked Airbnb listings. As a result, we are not able to interpret the exponents of the regression as significant either. 
+First, we will perform a logistic regression for all cities combined. The P value of the logistic regression is >0.05, therefore H0 cannot be rejected. This means that Valentine's Day has no significant effect on the amount of beds of booked Airbnb listings. As a result, we are not able to interpret the exponents of the regression.
 
-To answer the question posed above, there is no significant difference of Valentine's Day on the number of beds in booked Airbnb's. Finally, a model fit is performed with a log likelihood ratio test to check whether the model is significant and the H0 can be rejected. H0 tests whether all coefficients are zero. The log likelihood ratio test gives us a value of 0.7905802. 0.7905802 is greater than 0.05 and therefore significant, allowing the H0 to be rejected.
+Finally, a model fit is performed with a log likelihood ratio test to check whether the model is significant.The log likelihood ratio test gives us a value of 0.7905802. With a significance of 0.05, H0 cannot be rejected. Therefore, the model is not found to be significant. 
 
 ```{r include=FALSE}
 complete_data_booked_mad <- read.csv("../../gen/data-preparation/temp/complete_data_booked_mad.csv")
@@ -154,4 +153,4 @@ stargazer(glm2_m1, glm2_m2, glm2_m3,
 ```
 
 ## Conclusion
-Answering our research question, no significant relation has been found between Valentine's day and the prices of Airbnb listings. This is the case both for the accommodations in Paris, Rome and Madrid together and for the cities separately. Secondly, a significant relation has been found between Valentine's Day and the changes of an Airbnb listing being booked. However, although the changes of a listing being booked in Paris and Rome increase on Valentine's Day, the chance of a booking decreases in Madrid on this day. Lastly, No significant relation has been found between Valentine's Day and the number of beds in the Airbnbs booked.
+Answering our research question, no significant relation has been found between Valentine's day and the prices of Airbnb listings. This is the case both for the accommodations in Paris, Rome and Madrid together and for the cities separately. Secondly, a significant relation has been found between Valentine's Day and the changes of an Airbnb listing being booked. However, although the changes of a listing being booked in Paris and Rome increase on Valentine's Day, the chance of a booking decreases in Madrid on this day. Despite Paris having the smallest population of the three cities, it is here that the greatest impact can be seen. Lastly, No significant relation has been found between Valentine's Day and the number of beds in the Airbnbs booked.
