@@ -47,7 +47,8 @@ beds | Dummy variable: zero or more than two beds (0) or one or two beds (1)
 valentinesday | Dummy variable: whether it is not Valentine's Day (0) or it is (1)
 city | The city where the Airbnb ad is located (Madrid, Paris or Rome)
 
-![Conceptual model](https://user-images.githubusercontent.com/91567676/195590567-2f9e9970-d5a2-4043-8b22-a1517a0df328.png)
+![Schermafbeelding 2022-10-14 om 11 49 06](https://user-images.githubusercontent.com/112401369/195817813-da1a32ac-452d-42ed-ad10-9fd6e870779e.png)
+
 
 **Analysis**
 
