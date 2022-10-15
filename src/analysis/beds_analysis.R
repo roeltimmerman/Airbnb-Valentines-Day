@@ -60,7 +60,7 @@ exp(glm2_m3$coefficients)
 pdf(file="../../gen/analysis/output/histogram_beds.pdf")
 dev.off()
 ggsave(plot = beds_booked_valentinesday, filename = "../../gen/analysis/output/beds_booked_valentinesday.pdf")
-stargazer(glm2_m1, glm2_m2, glm2_m3, apply.coef=exp, apply.se = exp, type="html", title="Effect of Valentine's Day on number of beds of Airbnb listings",
+stargazer(glm2_m1, glm2_m2, glm2_m3, apply.coef=exp, apply.se = exp, type="html", title="Effect of Valentine's Day on number of beds of Airbnb listings per city",
           dep.var.caption = "One or two beds",
           dep.var.labels="",
           model.numbers = FALSE,
