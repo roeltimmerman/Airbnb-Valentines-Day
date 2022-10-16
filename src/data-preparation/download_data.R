@@ -26,7 +26,3 @@ files = list(c(url='http://data.insideairbnb.com/france/ile-de-france/paris/2021
 for (item in files) {
     download.file(item['url'], paste0('../../data/', item['fn']))
 }
-
-
-
-

@@ -4,6 +4,7 @@ EXPLORATION = ../../src/data-preparation
 
 
 all: $(DATA)/listings-paris.csv.gz $(DATA)/calendar-paris.csv.gz $(DATA)/listings-rome.csv.gz $(DATA)/calendar-rome.csv.gz $(DATA)/listings-madrid.csv.gz $(DATA)/calendar-madrid.csv.gz $(TEMP)/complete_data.csv $(EXPLORATION)/data_exploration.html
+
 $(DATA)/listings-paris.csv.gz $(DATA)/calendar-paris.csv.gz $(DATA)/listings-rome.csv.gz $(DATA)/calendar-rome.csv.gz $(DATA)/listings-madrid.csv.gz $(DATA)/calendar-madrid.csv.gz: download_data.R
 	R --vanilla < download_data.R
 	
