@@ -1,5 +1,5 @@
 ---
-title: "How far can you go for real love on Airbnb? - The effect of Valentine's Day on Airbnb listings in Europe"
+title: "How far can you go for love on Airbnb? - The effect of Valentine's Day on Airbnb listings in Europe"
 author: "Anouk Bor, Eva Bos, Bi Xuan Guo, Mandana Khabbazi, Indi Wieggers"
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 header-includes:
